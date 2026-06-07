@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #074875;
+  --color-accent: #96C11F;
+  --color-primary-dark: #053353;
+  --color-accent-hover: #7ea31a;
+  
+  --font-sans: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --primary-color: #074875;
+  --accent-color: #96C11F;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* Micro-animaciones y efectos sutiles */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
