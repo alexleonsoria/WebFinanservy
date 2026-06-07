@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -25,16 +26,17 @@ export default function RootLayout({ children }) {
       <body className="font-sans bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
         {/* Header Corporativo */}
         <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             {/* Logo */}
             <a href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-              <div className="flex items-center">
-                <span className="font-outfit font-extrabold text-2xl text-primary tracking-tight">Finan</span>
-                <span className="font-outfit font-extrabold text-2xl text-accent tracking-tight">servy</span>
-              </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200 self-end mb-1">
-                Ecuador
-              </span>
+              <Image
+                src="/images/Logo-Finanservy.png"
+                alt="Finanservy Logo"
+                width={340}
+                height={84}
+                className="h-16 w-auto object-contain"
+                priority
+              />
             </a>
 
             {/* Menú de Navegación */}

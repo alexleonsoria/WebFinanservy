@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const slides = [
   {
@@ -8,28 +9,28 @@ const slides = [
     title: "Eficiencia Operacional y Externalización Estratégica en Ecuador.",
     subtitle: "Control estricto de niveles de servicio (SLA) y predictibilidad de costos para el sector bancario y corporativo mediante BPO especializado.",
     cta: "Solicitar Consultoría de Procesos",
-    bg: "linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(7, 72, 117, 0.6)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1920')",
+    image: "/images/Eficiencia_Externalizacion_Estrategica.jpg",
   },
   {
     tag: "INNOVACIÓN TECNOLÓGICA BPO",
     title: "Optimización Financiera con Inteligencia Operacional Enterprise.",
     subtitle: "Reduzca hasta un 87% el tiempo de procesamiento con CONCILIA PRO. Automatización de conciliaciones masivas, matching inteligente y control de diferencias.",
     cta: "Conocer CONCILIA PRO",
-    bg: "linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(7, 72, 117, 0.6)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1920')",
+    image: "/images/Inteligencia_Operacional_Enterprise.jpg",
   },
   {
     tag: "MÁS DE 50 AÑOS DE TRAYECTORIA GLOBAL",
     title: "Garantía, Continuidad y Respaldo de Nivel Internacional.",
     subtitle: "Operaciones BPO certificadas bajo estrictas normas internacionales de calidad y seguridad de la información (ISO 9001 e ISO 27001) para la banca ecuatoriana.",
     cta: "Ver Certificaciones y Casos de Éxito",
-    bg: "linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(7, 72, 117, 0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920')",
+    image: "/images/Respaldo_Institucional_Continuidad.jpg",
   },
 ];
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto slide every 8 seconds
+  // Auto slide cada 8 segundos
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -40,75 +41,77 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Slider (Primer Pliegue de Conversión) */}
-      <section className="relative min-h-[85vh] flex items-center bg-slate-900 text-white overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center bg-slate-950 border-b border-slate-900 overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out ${
-              index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out flex items-center ${
+              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
             }`}
-            style={{ backgroundImage: slide.bg }}
           >
-            <div className="absolute inset-0 bg-slate-950/40" />
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+            {/* Imagen de fondo utilizando next/image */}
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              priority={index === 0}
+              className="object-cover object-center"
+            />
+            {/* Capa de Superposición Oscura (Overlay) del 65% para asegurar contraste */}
+            <div className="absolute inset-0 bg-slate-950/65 z-10" />
+
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
               <div className="max-w-3xl space-y-6 text-left">
-                {/* Tag Superior */}
-                <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-accent bg-slate-950/50 px-3 py-1.5 rounded-sm border border-accent/25">
+                {/* Tag Superior con fondo azul corporativo #074875 y texto verde #96C11F */}
+                <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
                   {slide.tag}
                 </div>
-                {/* Título */}
+                {/* Título en blanco para contraste impecable contra el overlay oscuro */}
                 <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
                   {slide.title}
                 </h1>
-                {/* Subtítulo */}
+                {/* Subtítulo en gris plata claro */}
                 <p className="text-lg text-slate-200 leading-relaxed max-w-2xl font-light">
                   {slide.subtitle}
                 </p>
-                {/* CTA Button */}
-                <div className="pt-4">
-                  <a
-                    href={index === 1 ? "/servicios/gestion-documental" : index === 2 ? "/nosotros" : "/contacto"}
-                    className="inline-block px-8 py-4 rounded-sm bg-accent hover:bg-accent-hover text-slate-950 font-bold text-sm tracking-wide uppercase shadow-lg hover:shadow-accent/20 transition-all hover-lift"
-                  >
-                    {slide.cta}
-                  </a>
-                </div>
               </div>
             </div>
           </div>
         ))}
 
-        {/* Controles de Navegación del Slider */}
-        <div className="absolute bottom-8 left-0 right-0">
-          <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+        {/* Indicadores de Posición Inferiores (Centrados en móvil, a la izquierda en desktop) */}
+        <div className="absolute bottom-8 left-0 right-0 z-30">
+          <div className="max-w-7xl mx-auto px-4 flex justify-center md:justify-start">
             <div className="flex items-center gap-2">
               {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-12 h-1.5 transition-all duration-300 ${
-                    index === currentSlide ? "bg-accent" : "bg-white/30 hover:bg-white/60"
+                    index === currentSlide ? "bg-[#96C11F]" : "bg-white/30 hover:bg-[#074875]"
                   }`}
                   aria-label={`Ir a diapositiva ${index + 1}`}
                 />
               ))}
             </div>
-            <div className="flex gap-4">
-              <button
-                onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-                className="w-10 h-10 border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all rounded-sm"
-              >
-                ←
-              </button>
-              <button
-                onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-                className="w-10 h-10 border border-white/20 hover:border-white hover:bg-white/10 flex items-center justify-center text-white transition-all rounded-sm"
-              >
-                →
-              </button>
-            </div>
           </div>
         </div>
+
+        {/* Flechas de Navegación Flotantes Circulares Laterales */}
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-white hover:bg-[#074875] hover:border-[#074875] flex items-center justify-center transition-all shadow-lg cursor-pointer"
+          aria-label="Diapositiva anterior"
+        >
+          <span className="text-xl">←</span>
+        </button>
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-white hover:bg-[#074875] hover:border-[#074875] flex items-center justify-center transition-all shadow-lg cursor-pointer"
+          aria-label="Siguiente diapositiva"
+        >
+          <span className="text-xl">→</span>
+        </button>
       </section>
 
       {/* 2. Cinta de Métricas Sólida (Social Proof) */}
