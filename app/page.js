@@ -6,6 +6,7 @@ import Image from "next/image";
 const slides = [
   {
     tag: "FILIAL EN ECUADOR DEL GRUPO CIBERNOS",
+    techLabel: "BPO_ENGINE: ACTIVE // SLA_MONITORING: ON",
     title: "Eficiencia Operacional y Externalización Estratégica en Ecuador.",
     subtitle: "Control estricto de niveles de servicio (SLA) y predictibilidad de costos para el sector bancario y corporativo mediante BPO especializado.",
     cta: "Solicitar Consultoría de Procesos",
@@ -13,6 +14,7 @@ const slides = [
   },
   {
     tag: "INNOVACIÓN TECNOLÓGICA BPO",
+    techLabel: "RPA_MATCHING_ENGINE // POWERED_BY_AI",
     title: "Optimización Financiera con Inteligencia Operacional Enterprise.",
     subtitle: "Reduzca hasta un 87% el tiempo de procesamiento con CONCILIA PRO. Automatización de conciliaciones masivas, matching inteligente y control de diferencias.",
     cta: "Conocer CONCILIA PRO",
@@ -20,6 +22,7 @@ const slides = [
   },
   {
     tag: "MÁS DE 50 AÑOS DE TRAYECTORIA GLOBAL",
+    techLabel: "ISO_9001_COMPLIANT // ISO_27001_SECURE",
     title: "Garantía, Continuidad y Respaldo de Nivel Internacional.",
     subtitle: "Operaciones BPO certificadas bajo estrictas normas internacionales de calidad y seguridad de la información (ISO 9001 e ISO 27001) para la banca ecuatoriana.",
     cta: "Ver Certificaciones y Casos de Éxito",
@@ -29,6 +32,12 @@ const slides = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [consoleLogs, setConsoleLogs] = useState([
+    "> [INIT] Iniciando análisis de conciliación transaccional...",
+    "> [PROC] Escaneando depósitos y transferencias físicas...",
+    "> [MATCH] Procesando 12,450 registros bancarios...",
+  ]);
+  const [reconciledPct, setReconciledPct] = useState(87);
 
   // Auto slide cada 8 segundos
   useEffect(() => {
@@ -38,10 +47,63 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
+  // Simulación de Consola en Tiempo Real
+  useEffect(() => {
+    const logInterval = setInterval(() => {
+      const updates = [
+        `> [SYNC] Sincronización con Core Bancario... OK`,
+        `> [OCR] Lectura de cheques completada con 99.8% precisión.`,
+        `> [AUTO] Matching inteligente de transferencias ejecutado.`,
+        `> [VERIFY] Validación de firmas en compensación terminada.`,
+        `> [COMPLIANCE] Generando bitácora de auditoría ISO 27001...`,
+        `> [CLEAN] Cuadre transaccional finalizado sin diferencias.`
+      ];
+      const randomUpdate = updates[Math.floor(Math.random() * updates.length)];
+      setConsoleLogs(prev => {
+        const next = [...prev, randomUpdate];
+        if (next.length > 5) next.shift();
+        return next;
+      });
+      setReconciledPct(prev => {
+        const next = prev + (Math.random() > 0.5 ? 1 : -1);
+        return next > 95 ? 90 : next < 80 ? 85 : next;
+      });
+    }, 4000);
+    return () => clearInterval(logInterval);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Slider (Primer Pliegue de Conversión) */}
       <section className="relative min-h-[85vh] flex items-center bg-slate-950 border-b border-slate-900 overflow-hidden">
+        {/* Subtle Tech Grid and Connections Overlay */}
+        <div className="absolute inset-0 z-20 pointer-events-none opacity-45">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="heroGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#heroGrid)" />
+            
+            {/* Subtle animated connection lines simulating data flows */}
+            <g stroke="rgba(150, 193, 31, 0.15)" strokeWidth="1.5" fill="none">
+              <path d="M-50,150 L300,150 L450,300 L900,300 L1050,150 L1800,150" className="animate-flow-dash" />
+              <path d="M100,500 L500,500 L650,350 L1200,350 L1350,500 L2000,500" className="animate-flow-dash-reverse" stroke="rgba(7, 72, 117, 0.35)" />
+            </g>
+            
+            {/* Pulsing high-tech nodes */}
+            <circle cx="300" cy="150" r="3" fill="#96C11F" className="status-dot-active" />
+            <circle cx="450" cy="300" r="3.5" fill="#96C11F" className="status-dot-active" />
+            <circle cx="900" cy="300" r="3" fill="#96C11F" className="status-dot-active" />
+            <circle cx="1050" cy="150" r="3.5" fill="#96C11F" className="status-dot-active" />
+            
+            <circle cx="500" cy="500" r="3" fill="#074875" className="status-dot-active" />
+            <circle cx="650" cy="350" r="3" fill="#074875" className="status-dot-active" />
+            <circle cx="1200" cy="350" r="3" fill="#074875" className="status-dot-active" />
+          </svg>
+        </div>
+
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -58,13 +120,19 @@ export default function Home() {
               className="object-cover object-center"
             />
             {/* Capa de Superposición Oscura (Overlay) del 65% para asegurar contraste */}
-            <div className="absolute inset-0 bg-slate-950/65 z-10" />
+            <div className="absolute inset-0 bg-slate-950/70 z-10" />
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
               <div className="max-w-3xl space-y-6 text-left">
-                {/* Tag Superior con fondo azul corporativo #074875 y texto verde #96C11F */}
-                <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
-                  {slide.tag}
+                {/* Contenedor de tags */}
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
+                    {slide.tag}
+                  </div>
+                  <div className="tech-badge">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent status-dot-active" />
+                    {slide.techLabel}
+                  </div>
                 </div>
                 {/* Título en blanco para contraste impecable contra el overlay oscuro */}
                 <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
@@ -115,113 +183,187 @@ export default function Home() {
       </section>
 
       {/* 2. Cinta de Métricas Sólida (Social Proof) */}
-      <section className="bg-slate-100 py-8 border-y border-slate-200">
+      <section className="bg-slate-100/50 py-10 border-y border-slate-200 relative overflow-hidden grid-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white border border-slate-200 p-6 tech-border hover-lift flex flex-col justify-center text-center space-y-1 z-10">
+              <div className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-widest mb-1">[ NODE: GLOBAL_LATENCY_0.02MS ]</div>
               <div className="font-outfit font-extrabold text-4xl text-primary">50+ Años</div>
-              <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">Haciendo fácil los servicios y la tecnología</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Trayectoria y Solidez Global</div>
             </div>
-            <div className="space-y-1">
+            <div className="bg-white border border-slate-200 p-6 tech-border hover-lift flex flex-col justify-center text-center space-y-1 z-10">
+              <div className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-widest mb-1">[ NODE: ACTIVE_OPERATORS_1300 ]</div>
               <div className="font-outfit font-extrabold text-4xl text-primary">1,300+</div>
-              <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">Profesionales en equipo global experto</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Profesionales en Equipo Global Experto</div>
             </div>
-            <div className="space-y-1">
+            <div className="bg-white border border-slate-200 p-6 tech-border hover-lift flex flex-col justify-center text-center space-y-1 z-10">
+              <div className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-widest mb-1">[ NODE: MULTI_REGIONAL_COMPLIANCE ]</div>
               <div className="font-outfit font-extrabold text-4xl text-primary">7 Países</div>
-              <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">España, Ecuador, Perú, Colombia, México, Chile, Portugal</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">España, Ecuador, Perú, Colombia...</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Los 4 Pilares de BPO (Grilla Estructurada) */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 3. Los 4 Pilares de BPO (Grilla Estructurada con Conectores) */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl text-primary tracking-tight">
               Los 4 Pilares Operativos de BPO
             </h2>
             <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
             <p className="text-slate-500 text-lg">
-              Soluciones estructuradas de externalización de procesos diseñadas para optimizar la eficiencia empresarial.
+              Soluciones estructuradas de externalización de procesos diseñadas para optimizar la eficiencia empresarial con soporte tecnológico inteligente.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Tarjeta 1 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">01</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Gestión Documental</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Especialización en tratamiento de cheques, procesamiento OCR y la integración de la suite CONCILIA PRO.
-                </p>
-              </div>
-              <a href="/servicios/gestion-documental" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
+          <div className="relative">
+            {/* Subtle horizontal connecting line representing the BPO data flow pipeline */}
+            <div className="absolute top-1/2 left-0 right-0 h-8 z-0 hidden lg:block -translate-y-1/2 pointer-events-none">
+              <svg className="w-full h-8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 50,16 H 1200" fill="none" stroke="rgba(7, 72, 117, 0.08)" strokeWidth="2" strokeDasharray="6,8" />
+                <path d="M 50,16 H 1200" fill="none" stroke="#96C11F" strokeWidth="2" className="animate-flow-dash opacity-75" />
+              </svg>
             </div>
 
-            {/* Tarjeta 2 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">02</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Procesos Administrativos</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Back office financiero, control presupuestario y conciliaciones transaccionales masivas.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+              {/* Tarjeta 1 */}
+              <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift tech-border">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-primary text-3xl font-light">01</span>
+                    <span className="tech-badge-primary">OCR_ENGINE: ACTIVE</span>
+                  </div>
+                  <h3 className="font-outfit font-bold text-xl text-slate-900">Gestión Documental</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Especialización en tratamiento de cheques, procesamiento OCR y la integración de la suite CONCILIA PRO.
+                  </p>
+                </div>
+                <a href="/servicios/gestion-documental" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
+                  Ver más →
+                </a>
               </div>
-              <a href="/servicios/procesos-administrativos" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
-            </div>
 
-            {/* Tarjeta 3 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">03</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Contact Center / CAU</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Soporte omnicanal de primer nivel y mesas de ayuda orientadas a salvaguardar la continuidad del negocio.
-                </p>
+              {/* Tarjeta 2 */}
+              <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift tech-border">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-primary text-3xl font-light">02</span>
+                    <span className="tech-badge-primary">RPA_AUTOMATION</span>
+                  </div>
+                  <h3 className="font-outfit font-bold text-xl text-slate-900">Procesos Administrativos</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Back office financiero, control presupuestario y conciliaciones transaccionales masivas.
+                  </p>
+                </div>
+                <a href="/servicios/procesos-administrativos" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
+                  Ver más →
+                </a>
               </div>
-              <a href="/servicios/contact-center-cau" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
-            </div>
 
-            {/* Tarjeta 4 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">04</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Gestión de Proveedores</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Homologación técnica de redes de terceros, control de contratos y cumplimiento operativo mediante GessDATA.
-                </p>
+              {/* Tarjeta 3 */}
+              <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift tech-border">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-primary text-3xl font-light">03</span>
+                    <span className="tech-badge-primary">OMNI_API: TECH2CALL</span>
+                  </div>
+                  <h3 className="font-outfit font-bold text-xl text-slate-900">Contact Center / CAU</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Soporte omnicanal de primer nivel y mesas de ayuda orientadas a salvaguardar la continuidad del negocio.
+                  </p>
+                </div>
+                <a href="/servicios/contact-center-cau" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
+                  Ver más →
+                </a>
               </div>
-              <a href="/servicios/gestion-proveedores" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
+
+              {/* Tarjeta 4 */}
+              <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift tech-border">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-primary text-3xl font-light">04</span>
+                    <span className="tech-badge-primary">PORTAL: GESSDATA</span>
+                  </div>
+                  <h3 className="font-outfit font-bold text-xl text-slate-900">Gestión de Proveedores</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Homologación técnica de redes de terceros, control de contratos y cumplimiento operativo mediante GessDATA.
+                  </p>
+                </div>
+                <a href="/servicios/gestion-proveedores" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
+                  Ver más →
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 4. Franja Tecnológica de Innovación */}
-      <section className="bg-slate-950 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/30 via-slate-950 to-slate-950" />
+      <section className="bg-slate-950 text-white py-20 relative overflow-hidden grid-pattern-dark">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-slate-950 to-slate-950" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-accent bg-accent/10 px-3 py-1 rounded-sm">
-                Ecosistema de Software Cibernos
+            <div className="space-y-8">
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-accent bg-accent/10 px-3 py-1 rounded-sm">
+                  Ecosistema de Software Cibernos
+                </div>
+                <div className="tech-badge">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent status-dot-active" />
+                  Powered by AI & RPA
+                </div>
               </div>
               <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
                 Herramientas Propietarias de Alta Ingeniería de Procesos
               </h2>
-              <p className="text-slate-300 leading-relaxed">
+              <p className="text-slate-300 leading-relaxed font-light font-sans">
                 Integramos Inteligencia Artificial, automatizaciones RPA (Robotic Process Automation), motores de reconocimiento inteligente OCR y portales de cumplimiento normativo en su operación.
               </p>
+
+              {/* Visual Data Pipeline Diagram */}
+              <div className="p-6 bg-slate-900/60 border border-slate-800 rounded-sm tech-border-dark space-y-4">
+                <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-widest block">[ BPO_DATA_FLOW_PIPELINE ]</span>
+                <div className="relative flex items-center justify-between gap-1 h-16 px-1">
+                  {/* Line Background */}
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 50,32 H 100" fill="none" stroke="rgba(150, 193, 31, 0.15)" strokeWidth="1.5" />
+                    <path d="M 50,32 H 100" fill="none" stroke="#96C11F" strokeWidth="1.5" className="animate-flow-dash" />
+                    
+                    <path d="M 170,32 H 220" fill="none" stroke="rgba(150, 193, 31, 0.15)" strokeWidth="1.5" />
+                    <path d="M 170,32 H 220" fill="none" stroke="#96C11F" strokeWidth="1.5" className="animate-flow-dash" />
+                    
+                    <path d="M 290,32 H 340" fill="none" stroke="rgba(150, 193, 31, 0.15)" strokeWidth="1.5" />
+                    <path d="M 290,32 H 340" fill="none" stroke="#96C11F" strokeWidth="1.5" className="animate-flow-dash" />
+                  </svg>
+
+                  {/* Node 1 */}
+                  <div className="z-10 bg-slate-950 border border-slate-800 px-2 py-1 rounded-sm text-center flex flex-col items-center">
+                    <span className="font-mono text-[8px] text-[#96C11F] font-bold">INGESTA</span>
+                    <span className="font-mono text-[7px] text-slate-500">CSV/XML/PDF</span>
+                  </div>
+
+                  {/* Node 2 */}
+                  <div className="z-10 bg-slate-950 border border-[#074875] px-2 py-1 rounded-sm text-center flex flex-col items-center">
+                    <span className="font-mono text-[8px] text-[#96C11F] font-bold">OCR & RPA</span>
+                    <span className="font-mono text-[7px] text-slate-400">AI Powered</span>
+                  </div>
+
+                  {/* Node 3 */}
+                  <div className="z-10 bg-[#074875] border border-accent px-2 py-1 rounded-sm text-center flex flex-col items-center shadow-lg">
+                    <span className="font-mono text-[8px] text-white font-bold">CONCILIA PRO</span>
+                    <span className="font-mono text-[7px] text-accent">Matching</span>
+                  </div>
+
+                  {/* Node 4 */}
+                  <div className="z-10 bg-slate-950 border border-slate-800 px-2 py-1 rounded-sm text-center flex flex-col items-center">
+                    <span className="font-mono text-[8px] text-[#96C11F] font-bold">REPORTE</span>
+                    <span className="font-mono text-[7px] text-slate-500">Audit SLA</span>
+                  </div>
+                </div>
+              </div>
+
               <div className="space-y-4 pt-2">
                 <div className="flex gap-3">
                   <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent text-sm font-bold">✓</div>
@@ -246,17 +388,37 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-slate-900 border border-slate-800 p-8 rounded-sm shadow-2xl space-y-6">
+
+            {/* Panel de consola en vivo */}
+            <div className="bg-slate-900 border border-slate-800 p-8 rounded-sm shadow-2xl space-y-6 tech-border-dark">
               <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                 <span className="font-mono text-xs text-slate-500">CONCILIA_PRO_SYSTEM_STATUS</span>
-                <span className="h-2.5 w-2.5 rounded-full bg-accent animate-pulse" />
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[9px] text-[#96C11F] bg-[#96C11F]/10 px-1.5 py-0.5 rounded">AUTO_PROCESS: ON</span>
+                  <span className="h-2.5 w-2.5 rounded-full bg-accent animate-pulse" />
+                </div>
               </div>
-              <div className="space-y-4 font-mono text-xs">
-                <p className="text-slate-400">&gt; Iniciando análisis de conciliación transaccional...</p>
-                <p className="text-slate-400">&gt; 12,450 registros procesados en 5.08 minutos.</p>
-                <p className="text-accent">&gt; 87% de reducción de carga de procesamiento manual lograda.</p>
-                <div className="w-full bg-slate-950 h-2 border border-slate-800 rounded-sm overflow-hidden">
-                  <div className="bg-accent h-full w-[87%]" />
+              <div className="space-y-3 font-mono text-xs min-h-[160px] flex flex-col justify-end">
+                {consoleLogs.map((log, idx) => {
+                  let colorClass = "text-slate-400";
+                  if (log.includes("OK") || log.includes("precisión") || log.includes("sin diferencias")) {
+                    colorClass = "text-accent";
+                  } else if (log.includes("[INIT]")) {
+                    colorClass = "text-slate-300";
+                  }
+                  return (
+                    <p key={idx} className={`${colorClass} transition-all duration-300`}>{log}</p>
+                  );
+                })}
+                <div className="pt-2">
+                  <span className="text-slate-500 uppercase text-[9px] block mb-1">Carga Operacional Resuelta:</span>
+                  <div className="w-full bg-slate-950 h-2 border border-slate-800 rounded-sm overflow-hidden flex items-center">
+                    <div className="bg-accent h-full transition-all duration-500 ease-out" style={{ width: `${reconciledPct}%` }} />
+                  </div>
+                  <div className="flex justify-between items-center text-[9px] text-slate-500 mt-1">
+                    <span>REDUCCIÓN MANUAL</span>
+                    <span className="font-bold text-accent">{reconciledPct}%</span>
+                  </div>
                 </div>
               </div>
               <div className="pt-4 border-t border-slate-800 text-center">

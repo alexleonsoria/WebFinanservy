@@ -5,11 +5,17 @@ export const metadata = {
 
 export default function GestionProveedores() {
   return (
-    <div className="py-16 md:py-24 space-y-20 bg-slate-50">
+    <div className="py-16 md:py-24 space-y-20 bg-slate-50 grid-pattern relative">
       {/* Cabecera */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Servicios de Mitigación de Riesgos y Compliance
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+        <div className="flex flex-col items-center gap-3">
+          <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
+            Servicios de Mitigación de Riesgos y Compliance
+          </div>
+          <div className="tech-badge">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent status-dot-active" />
+            GESSDATA // RISK_MANAGEMENT // COMPLIANCE
+          </div>
         </div>
         <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
           Gestión de Proveedores y Compliance
@@ -21,23 +27,35 @@ export default function GestionProveedores() {
       </section>
 
       {/* Secciones de GessDATA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 border border-slate-200 rounded-sm hover-lift space-y-4">
+          <div className="bg-white p-8 border border-slate-200 rounded-sm hover-lift space-y-4 tech-border">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-xs font-mono font-bold text-slate-400">[ PORTAL: GESSDATA_COMPLIANCE ]</span>
+              <span className="h-2 w-2 rounded-full bg-accent status-dot-active" />
+            </div>
             <h3 className="font-outfit font-bold text-xl text-primary">Homologación GessDATA</h3>
             <p className="text-xs text-slate-500 leading-relaxed">
               Plataforma centralizada orientada al estricto cumplimiento normativo de subcontratistas. Control de contratos marco, pólizas de seguros vigentes, documentación del SRI y estado de cumplimiento legal local.
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-slate-200 rounded-sm hover-lift space-y-4">
+          <div className="bg-white p-8 border border-slate-200 rounded-sm hover-lift space-y-4 tech-border">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-xs font-mono font-bold text-slate-400">[ SERVICE: GESSCAE_CAE ]</span>
+              <span className="h-2 w-2 rounded-full bg-accent status-dot-active" />
+            </div>
             <h3 className="font-outfit font-bold text-xl text-primary">Riesgos Laborales GessCAE</h3>
             <p className="text-xs text-slate-500 leading-relaxed">
               Automatización de la entrega y validación de documentación exigida para la coordinación de actividades empresariales (CAE) en las instalaciones físicas del cliente corporativo.
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-slate-200 rounded-sm hover-lift space-y-4">
+          <div className="bg-white p-8 border border-slate-200 rounded-sm hover-lift space-y-4 tech-border">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-xs font-mono font-bold text-slate-400">[ COMPLIANCE: ETHICAL_CHANNEL ]</span>
+              <span className="h-2 w-2 rounded-full bg-accent status-dot-active" />
+            </div>
             <h3 className="font-outfit font-bold text-xl text-primary">Canal Ético y de Denuncias</h3>
             <p className="text-xs text-slate-500 leading-relaxed">
               Despliegue y administración de buzones de denuncias independientes alineados con las normativas locales e internacionales de gobierno corporativo y anti-soborno.
@@ -47,10 +65,13 @@ export default function GestionProveedores() {
       </section>
 
       {/* CTA Sección */}
-      <section className="max-w-4xl mx-auto px-4 text-center">
-        <div className="bg-slate-900 text-white p-8 md:p-12 rounded-sm space-y-6">
+      <section className="max-w-4xl mx-auto px-4 text-center relative z-10">
+        <div className="bg-slate-900 text-white p-8 md:p-12 rounded-sm space-y-6 tech-border-dark grid-pattern-dark">
+          <div className="flex justify-center mb-1">
+            <span className="tech-badge">[ COMPLIANCE_SCANNER: ONLINE ]</span>
+          </div>
           <h3 className="font-outfit font-bold text-2xl">¿Quiere evaluar el riesgo de su cadena de proveedores?</h3>
-          <p className="text-slate-300 text-sm max-w-lg mx-auto">
+          <p className="text-slate-300 text-sm max-w-lg mx-auto font-light">
             Suscríbase hoy para recibir un análisis básico de cumplimiento y vulnerabilidades en la cadena de subcontratación de su organización.
           </p>
           <div className="pt-2">
