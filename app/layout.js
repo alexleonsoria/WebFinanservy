@@ -40,15 +40,11 @@ export default function RootLayout({ children }) {
             </a>
 
             {/* Menú de Navegación */}
-            <nav className="hidden md:flex items-center gap-6 font-medium text-sm text-slate-600">
+            <nav className="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
               <a href="/" className="hover:text-primary transition-colors">Inicio</a>
               <a href="/nosotros" className="hover:text-primary transition-colors">Nosotros</a>
               <a href="/servicios" className="hover:text-primary transition-colors">Servicios</a>
               <a href="/casos-exito" className="hover:text-primary transition-colors">Casos de Éxito</a>
-              <div className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-50 border border-slate-200 rounded-sm font-mono text-[9px] text-slate-500 font-bold uppercase tracking-widest">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent status-dot-active" />
-                SYS: OPERATIONAL
-              </div>
               <a href="/contacto" className="px-4 py-2 rounded-sm bg-primary hover:bg-primary-dark text-white font-semibold transition-all hover-lift">
                 Contacto
               </a>
