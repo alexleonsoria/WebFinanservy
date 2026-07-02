@@ -1,3 +1,5 @@
+import ServiceHero from "@/components/ServiceHero";
+
 export const metadata = {
   title: "Gestión de Proveedores y Compliance Corporativo | GessDATA",
   description: "Audite y homologue a sus proveedores externos reduciendo riesgos de subcontratación con la suite GessDATA y GessCAE en Ecuador.",
@@ -5,20 +7,15 @@ export const metadata = {
 
 export default function GestionProveedores() {
   return (
-    <div className="py-16 md:py-24 space-y-20 bg-slate-50">
+    <div className="space-y-20 bg-slate-50 pb-16 md:pb-24">
       {/* Cabecera */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Servicios de Mitigación de Riesgos y Compliance
-        </div>
-        <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-          Gestión de Proveedores y Compliance
-        </h1>
-        <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
-        <p className="text-slate-500 text-lg max-w-3xl mx-auto font-light">
-          Mitigamos los riesgos legales, reputacionales y operativos derivados de la contratación de redes extensas de terceros.
-        </p>
-      </section>
+      <ServiceHero
+        backgroundImage="/images/hero-gestion-proveedores.jpg"
+        tagCategory="Servicios de Mitigación de Riesgos y Compliance"
+        tagConsole="SYS_COMPLIANCE_ACTIVE"
+        title="Gestión de Proveedores y Compliance"
+        subtitle="Mitigamos los riesgos legales, reputacionales y operativos derivados de la contratación de redes extensas de terceros."
+      />
 
       {/* Secciones de GessDATA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,3 +1,5 @@
+import ServiceHero from "@/components/ServiceHero";
+
 export const metadata = {
   title: "BPO Gestión Documental y CONCILIA PRO | Finanservy",
   description: "Tratamiento automatizado de cheques, OCR bancario y conciliación financiera en tiempo real con la suite CONCILIA PRO en Ecuador.",
@@ -5,20 +7,15 @@ export const metadata = {
 
 export default function GestionDocumental() {
   return (
-    <div className="py-16 md:py-24 space-y-20 bg-slate-50">
+    <div className="space-y-20 bg-slate-50 pb-16 md:pb-24">
       {/* Cabecera */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Servicio Core Bancario (SEO/SEM)
-        </div>
-        <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-          Gestión Documental y Conciliación Bancaria
-        </h1>
-        <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
-        <p className="text-slate-500 text-lg max-w-3xl mx-auto font-light">
-          Capturamos y procesamos altos volúmenes de datos bancarios con OCR avanzado, integrando conciliaciones financieras de precisión.
-        </p>
-      </section>
+      <ServiceHero
+        backgroundImage="/images/hero-gestion-documental.jpg"
+        tagCategory="Servicio Core Bancario"
+        tagConsole="SYS_OCR_ACTIVE"
+        title="Gestión Documental y Conciliación Bancaria"
+        subtitle="Capturamos y procesamos altos volúmenes de datos bancarios con OCR avanzado, integrando conciliaciones financieras de precisión."
+      />
 
       {/* Portafolio Especializado */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

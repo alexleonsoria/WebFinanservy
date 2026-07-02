@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import BpoServicesGrid from "../components/BpoServicesGrid";
 
 const slides = [
   {
@@ -178,63 +179,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Tarjeta 1 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">01</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Gestión Documental</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Especialización en tratamiento de cheques, procesamiento OCR and la integración de la suite CONCILIA PRO.
-                </p>
-              </div>
-              <a href="/servicios/gestion-documental" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
-            </div>
-
-            {/* Tarjeta 2 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">02</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Procesos Administrativos</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Back office financiero, control presupuestario y conciliaciones transaccionales masivas.
-                </p>
-              </div>
-              <a href="/servicios/procesos-administrativos" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
-            </div>
-
-            {/* Tarjeta 3 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">03</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Contact Center / CAU</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Soporte omnicanal de primer nivel y mesas de ayuda orientadas a salvaguardar la continuidad del negocio.
-                </p>
-              </div>
-              <a href="/servicios/contact-center-cau" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
-            </div>
-
-            {/* Tarjeta 4 */}
-            <div className="bg-white border border-slate-200 p-8 flex flex-col justify-between hover-lift">
-              <div className="space-y-4">
-                <div className="text-primary text-3xl font-light">04</div>
-                <h3 className="font-outfit font-bold text-xl text-slate-900">Gestión de Proveedores</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  Homologación técnica de redes de terceros, control de contratos y cumplimiento operativo mediante GessDATA.
-                </p>
-              </div>
-              <a href="/servicios/gestion-proveedores" className="text-sm font-bold text-primary hover:text-accent mt-6 block">
-                Ver más →
-              </a>
-            </div>
-          </div>
+          <BpoServicesGrid />
         </div>
       </section>
 

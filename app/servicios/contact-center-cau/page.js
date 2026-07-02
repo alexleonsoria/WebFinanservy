@@ -1,3 +1,5 @@
+import ServiceHero from "@/components/ServiceHero";
+
 export const metadata = {
   title: "Contact Center Omnicanal y Service Desk Corporativo | Finanservy",
   description: "Soporte al cliente y mesas de ayuda TI especializadas Nivel 1 y 2 integrando nuestra suite de omnicanalidad Tech2Call en Ecuador.",
@@ -5,20 +7,15 @@ export const metadata = {
 
 export default function ContactCenterCau() {
   return (
-    <div className="py-16 md:py-24 space-y-20 bg-slate-50">
+    <div className="space-y-20 bg-slate-50 pb-16 md:pb-24">
       {/* Cabecera */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Servicios Omnicanales de Relación B2B
-        </div>
-        <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-          Contact Center y CAUs Operativos
-        </h1>
-        <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
-        <p className="text-slate-500 text-lg max-w-3xl mx-auto font-light">
-          Interconectamos sus procesos de negocio con sistemas de atención rápidos y ágiles para soporte de usuarios.
-        </p>
-      </section>
+      <ServiceHero
+        backgroundImage="/images/hero-contact-center-cau.jpg"
+        tagCategory="Servicios Omnicanales de Relación B2B"
+        tagConsole="SYS_CX_ACTIVE"
+        title="Contact Center y CAUs Operativos"
+        subtitle="Interconectamos sus procesos de negocio con sistemas de atención rápidos y ágiles para soporte de usuarios."
+      />
 
       {/* Secciones del Servicio */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

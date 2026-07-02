@@ -1,3 +1,5 @@
+import ServiceHero from "@/components/ServiceHero";
+
 export const metadata = {
   title: "Outsourcing de Procesos Administrativos y Financieros | Finanservy",
   description: "Delegue la gestión de cuentas por pagar, control presupuestario y recobro de carteras morosas a expertos en back office financiero en Ecuador.",
@@ -5,20 +7,15 @@ export const metadata = {
 
 export default function ProcesosAdministrativos() {
   return (
-    <div className="py-16 md:py-24 space-y-20 bg-slate-50">
+    <div className="space-y-20 bg-slate-50 pb-16 md:pb-24">
       {/* Cabecera */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Soluciones de Gestión Operativa (CFO Focus)
-        </div>
-        <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-          Procesos Administrativos y Financieros
-        </h1>
-        <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
-        <p className="text-slate-500 text-lg max-w-3xl mx-auto font-light">
-          Optimizamos la gestión administrativa del back office de su empresa bajo estrictos estándares normativos y fiscales.
-        </p>
-      </section>
+      <ServiceHero
+        backgroundImage="/images/hero-procesos-administrativos.jpg"
+        tagCategory="Soluciones de Gestión Operativa"
+        tagConsole="SYS_FIN_ACTIVE"
+        title="Procesos Administrativos y Financieros"
+        subtitle="Optimizamos la gestión administrativa del back office de su empresa bajo estrictos estándares normativos y fiscales."
+      />
 
       {/* Áreas Operativas */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
