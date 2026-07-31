@@ -8,7 +8,7 @@ export default function ServiceHero({
   subtitle
 }) {
   return (
-    <section className="w-full relative min-h-[50vh] flex items-center bg-slate-950 overflow-hidden">
+    <section className="w-full relative min-h-[50vh] flex items-center bg-slate-950 overflow-hidden text-left">
       {/* 1. Contenedor Superior de Imagen (Fondo con next/image fill e priority) */}
       <Image
         src={backgroundImage}
@@ -19,31 +19,31 @@ export default function ServiceHero({
         className="object-cover object-center"
       />
 
-      {/* 2. Capa de superposición oscurecida */}
+      {/* 2. Capa de superposición oscurecida (50% overlay) */}
       <div className="absolute inset-0 bg-slate-950/50 z-10" />
 
       {/* 3. Contenido alineado a la izquierda */}
-      <div className="container mx-auto px-6 relative z-20">
-        <div className="max-w-4xl space-y-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 py-16 md:py-24">
+        <div className="max-w-3xl space-y-5">
           <div className="flex flex-wrap items-center gap-3">
             {tagCategory && (
-              <span className="text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/90 px-3 py-1 rounded-sm border border-[#074875]/50">
+              <span className="text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
                 {tagCategory}
               </span>
             )}
             {tagConsole && (
-              <span className="font-mono text-[10px] text-[#E2E8F0] bg-white/5 border border-white/10 px-2 py-0.5 rounded-sm tracking-wider">
+              <span className="font-mono text-[10px] text-slate-300 bg-slate-900/80 border border-slate-800 px-2.5 py-1 rounded-sm tracking-wider">
                 {tagConsole}
               </span>
             )}
           </div>
 
-          <h1 className="font-outfit font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
+          <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
             {title}
           </h1>
 
           {subtitle && (
-            <p className="text-base sm:text-lg text-[#E2E8F0] leading-relaxed max-w-2xl font-light">
+            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-light">
               {subtitle}
             </p>
           )}
@@ -52,3 +52,4 @@ export default function ServiceHero({
     </section>
   );
 }
+

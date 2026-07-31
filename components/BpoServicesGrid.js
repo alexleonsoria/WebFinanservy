@@ -1,35 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FileDigit, Cpu, Headphones, ShieldCheck } from "lucide-react";
+import { Files, Cpu, Headphones, ShieldCheck } from "lucide-react";
 
 const services = [
   {
-    link: "/servicios/gestion-documental",
     image: "/images/bpo-documental-card.jpg",
-    Icon: FileDigit,
-    title: "Gestión Documental y BPO Inteligente",
-    desc: "Digitalización masiva con IA para agilizar procesos de documentos valorados (cheques, letras), reduciendo drásticamente los tiempos de respuesta."
+    Icon: Files,
+    title: "Gestión Documental e Hiperautomatización",
+    desc: "Digitalización masiva con IA para agilizar el procesamiento de cheques, letras y documentos valorados, reduciendo los tiempos de respuesta."
   },
   {
-    link: "/servicios/procesos-administrativos",
     image: "/images/bpo-administrativo-card.jpg",
     Icon: Cpu,
-    title: "Back Office y Procesos Administrativos Automatizados",
-    desc: "Optimización de tareas financieras, facturación, cuentas por pagar y reconciliaciones masivas mediante IA y RPA de escala enterprise."
+    title: "Back Office Administrativo & RPA",
+    desc: "Optimización de tareas financieras, cuentas por pagar y conciliaciones masivas de escala enterprise."
   },
   {
-    link: "/servicios/contact-center-cau",
     image: "/images/bpo-contact-center-card.jpg",
     Icon: Headphones,
-    title: "Omnicanalidad Financiera y Mesas de Ayuda con IA",
-    desc: "Central telefónica en la nube y bots inteligentes diseñados para optimizar la resolución de consultas de negocio y soporte operativo de primer nivel."
+    title: "Omnicanalidad Financiera & IA Conversacional",
+    desc: "Centrales en la nube y bots inteligentes diseñados para optimizar la resolución de consultas de negocio y soporte operativo de primer nivel."
   },
   {
-    link: "/servicios/gestion-proveedores",
     image: "/images/bpo-proveedores-card.jpg",
     Icon: ShieldCheck,
-    title: "Gobernanza Digital y Compliance de Terceros",
-    desc: "Automatización de la validación de proveedores, control de contratos y aseguramiento del cumplimiento de normativas de riesgo vigentes con la plataforma GessDATA."
+    title: "Compliance & Gobernanza Digital",
+    desc: "Automatización de la validación de proveedores, control de contratos y cumplimiento de normativas de riesgo vigentes con la plataforma GessDATA."
   }
 ];
 
@@ -41,7 +37,7 @@ export default function BpoServicesGrid() {
         return (
           <div
             key={idx}
-            className="relative bg-white border border-slate-100 rounded-md shadow-sm hover-lift flex flex-col justify-between overflow-visible"
+            className="bg-white border border-slate-100 rounded-md shadow-sm hover-lift flex flex-col overflow-visible"
           >
             {/* 1. Contenedor Superior de Imagen */}
             <div className="relative w-full h-48 rounded-t-md overflow-hidden bg-slate-100">
@@ -51,12 +47,15 @@ export default function BpoServicesGrid() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 className="object-cover"
+                priority={idx === 0}
               />
             </div>
 
-            {/* 2. Icono Flotante Intermedio */}
-            <div className="absolute top-[168px] left-6 z-20 w-12 h-12 rounded-full shadow-md bg-white flex items-center justify-center border border-slate-100">
-              <Icon className="w-5 h-5 text-[#0F172A]" />
+            {/* 2. Botón Flotante Circular Intermedio */}
+            <div className="relative flex justify-center">
+              <div className="absolute -top-6 w-12 h-12 rounded-full shadow-md bg-white flex items-center justify-center border border-slate-100/50 z-10">
+                <Icon className="w-5 h-5 text-[#074875]" />
+              </div>
             </div>
 
             {/* 3. Cuerpo de la Tarjeta */}
@@ -70,11 +69,11 @@ export default function BpoServicesGrid() {
                 </p>
               </div>
 
-              {/* 5. Enlace de Conversión */}
+              {/* 4. Enlace inferior de conversión a /contacto */}
               <div className="pt-4 mt-6 border-t border-slate-50">
                 <Link
-                  href={service.link}
-                  className="text-xs font-bold text-primary hover:text-accent transition-colors inline-block"
+                  href="/contacto"
+                  className="text-xs font-extrabold text-[#074875] hover:text-[#96C11F] transition-colors inline-block uppercase tracking-wider"
                 >
                   Saber más →
                 </Link>
