@@ -18,7 +18,6 @@ const slides = [
     image: "/images/Eficiencia_Externalizacion_Estrategica.jpg"
   },
   {
-    tag: "INNOVACIÓN TECNOLÓGICA BPO",
     title: "Optimización financiera con Inteligencia Operativa.",
     subtitle: "Reduzca hasta un 87% el tiempo de procesamiento con CONCILIA PRO: conciliaciones masivas y matching automático.",
     cta: "Conocer CONCILIA PRO",
@@ -26,7 +25,6 @@ const slides = [
     image: "/images/Inteligencia_Operacional_Enterprise.jpg"
   },
   {
-    tag: "MÁS DE 50 AÑOS DE TRAYECTORIA",
     title: "Garantía y respaldo de nivel internacional.",
     subtitle: "Operaciones BPO certificadas bajo normas ISO de calidad y seguridad de la información.",
     cta: "Ver Casos de Éxito",
@@ -73,9 +71,11 @@ export default function Home() {
               <div className="max-w-3xl space-y-6 text-left">
                 
                 {/* Tag Superior */}
-                <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
-                  {slide.tag}
-                </div>
+                {slide.tag && (
+                  <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
+                    {slide.tag}
+                  </div>
+                )}
                 {/* Título H1 */}
                 <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
                   {slide.title}
@@ -191,7 +191,7 @@ export default function Home() {
               SEGURIDAD Y COMPLIANCE POR DISEÑO
             </div>
             <h2 className="font-outfit font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#074875] tracking-tight leading-snug">
-              "Innovación continua sobre plataformas de alta disponibilidad. Garantizamos la continuidad de sus operaciones y el estricto cumplimiento normativo."
+              &ldquo;Innovación continua sobre plataformas de alta disponibilidad. Garantizamos la continuidad de sus operaciones y el estricto cumplimiento normativo.&rdquo;
             </h2>
             <div className="h-1.5 w-20 bg-[#96C11F] mx-auto rounded-full" />
           </div>
