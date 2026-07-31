@@ -44,16 +44,16 @@ export default function Navbar() {
             alt={isScrolled ? "Logo Finanservy Color" : "Logo Finanservy Blanco"}
             width={240}
             height={60}
-            className="h-10 md:h-12 w-auto object-contain transition-all duration-300"
+            className="h-12 lg:h-14 w-auto object-contain transition-all duration-300"
             priority
           />
         </Link>
 
         {/* Menú de Navegación (Escritorio) */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           <Link
             href="/"
-            className={`font-medium text-sm transition-colors ${
+            className={`font-semibold text-base lg:text-lg transition-colors ${
               isScrolled
                 ? "text-slate-700 hover:text-blue-600"
                 : "text-white hover:text-blue-200"
@@ -63,7 +63,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/nosotros"
-            className={`font-medium text-sm transition-colors ${
+            className={`font-semibold text-base lg:text-lg transition-colors ${
               isScrolled
                 ? "text-slate-700 hover:text-blue-600"
                 : "text-white hover:text-blue-200"
@@ -73,7 +73,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/servicios"
-            className={`font-medium text-sm transition-colors ${
+            className={`font-semibold text-base lg:text-lg transition-colors ${
               isScrolled
                 ? "text-slate-700 hover:text-blue-600"
                 : "text-white hover:text-blue-200"
@@ -83,7 +83,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/casos-exito"
-            className={`font-medium text-sm transition-colors ${
+            className={`font-semibold text-base lg:text-lg transition-colors ${
               isScrolled
                 ? "text-slate-700 hover:text-blue-600"
                 : "text-white hover:text-blue-200"
@@ -97,7 +97,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/contacto"
-            className={`font-semibold px-6 py-2.5 rounded-full text-sm transition-all shadow-sm ${
+            className={`font-semibold px-7 py-3 rounded-full text-base transition-all shadow-sm ${
               isScrolled
                 ? "bg-blue-600 text-white hover:bg-blue-700"
                 : "bg-white text-blue-900 hover:bg-slate-100"
