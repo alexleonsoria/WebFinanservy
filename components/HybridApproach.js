@@ -16,7 +16,7 @@ export default function HybridApproach() {
           </h2>
           <div className="h-1.5 w-16 bg-[#96C11F] mx-auto rounded-full" />
           <p className="text-slate-600 text-lg font-light leading-relaxed">
-            Unimos el rigor y la comprensión del negocio bancario con capas tecnológicas eficientes para garantizar trazabilidad, resiliencia y escalabilidad sin fricción.
+            Dominio del negocio bancario potenciado por plataformas de automatización e IA.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function HybridApproach() {
                       Crecimiento Costoso por Headcount
                     </h4>
                     <p className="text-xs text-slate-500 leading-relaxed mt-1">
-                      Ante el incremento de volumen, el BPO tradicional solo ofrece sumar más personal manual en vez de optimizar con tecnología, disparando sus costos operativos e incrementando el riesgo de errores.
+                      El BPO tradicional solo sabe sumar más personal manual ante el aumento de volumen, disparando costos y errores.
                     </p>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ export default function HybridApproach() {
                       Operación de 'Caja Negra'
                     </h4>
                     <p className="text-xs text-slate-500 leading-relaxed mt-1">
-                      Falta total de visibilidad sobre cómo se ejecutan los procesos externalizados, generando desconfianza, dependencia y pérdida de control para el cliente.
+                      Sin visibilidad en tiempo real ni trazabilidad, generando desconfianza y pérdida de control sobre el proceso.
                     </p>
                   </div>
                 </div>
@@ -76,16 +76,11 @@ export default function HybridApproach() {
                       Desconexión con el Negocio
                     </h4>
                     <p className="text-xs text-slate-500 leading-relaxed mt-1">
-                      Desarrolladores o proveedores de software que desconocen la presión regulatoria, la gestión y la operativa financiera diaria.
+                      Proveedores de software puro que desconocen la operativa financiera diaria y las normativas regulatorias.
                     </p>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Espacio para balancear visualmente */}
-            <div className="pt-8 mt-8 border-t border-slate-200/50 text-slate-400 text-xs italic">
-              El modelo analógico ha alcanzado su límite de eficiencia operativa.
             </div>
           </div>
 
@@ -94,7 +89,7 @@ export default function HybridApproach() {
             {/* Sutil gradiente de fondo */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#074875]/20 via-transparent to-transparent pointer-events-none" />
             
-            <div className="space-y-6 relative z-10">
+            <div className="space-y-6 relative z-10 mb-8">
               <div className="border-b border-slate-800 pb-4">
                 <h3 className="font-outfit font-extrabold text-xl text-white tracking-tight">
                   La Solución Finanservy
@@ -112,10 +107,10 @@ export default function HybridApproach() {
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-sm">
-                      Escalabilidad Inteligente First-Tech
+                      Escalabilidad First-Tech
                     </h4>
                     <p className="text-xs text-slate-300 leading-relaxed mt-1">
-                      Primero implementamos automatización e IA de última generación para absorber altos volúmenes; solo sumamos talento humano donde aporta valor estratégico real.
+                      Implementamos automatización e IA para absorber volumen masivo, sumando talento humano solo donde aporta valor.
                     </p>
                   </div>
                 </div>
@@ -127,10 +122,10 @@ export default function HybridApproach() {
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-sm">
-                      Operación Transparente & Trazable
+                      Transparencia y Trazabilidad Total
                     </h4>
                     <p className="text-xs text-slate-300 leading-relaxed mt-1">
-                      Visibilidad total en tiempo real con tableros de control (Dashboards BI), auditoría continua y seguimiento riguroso de SLAs sobre repositorios únicos.
+                      Control en tiempo real con tableros de mando (BI), auditoría continua y seguimiento estricto de SLAs.
                     </p>
                   </div>
                 </div>
@@ -145,21 +140,18 @@ export default function HybridApproach() {
                       Dominio Bancario & IA Propietaria
                     </h4>
                     <p className="text-xs text-slate-300 leading-relaxed mt-1">
-                      Soluciones de software especializadas (B360 y CONCILIA PRO) diseñadas por expertos que entienden los procesos y las normativas del sector.
+                      Plataformas propias (B360 y CONCILIA PRO) diseñadas por expertos en gestión y riesgo financiero.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* CTA e Info Footer */}
-            <div className="pt-8 mt-8 border-t border-slate-800 relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <span className="text-xs text-slate-400">
-                Modelo híbrido respaldado por Grupo Cibernos.
-              </span>
+            {/* CTA Full Width */}
+            <div className="pt-6 border-t border-slate-800 relative z-10 w-full">
               <Link 
                 href="/contacto"
-                className="px-5 py-2.5 bg-[#96C11F] hover:bg-[#7ea31a] text-slate-900 font-bold text-xs rounded-sm transition-all text-center uppercase tracking-wider"
+                className="w-full block py-3 bg-[#96C11F] hover:bg-[#7ea31a] text-slate-900 font-extrabold text-xs rounded-sm transition-all text-center uppercase tracking-wider hover-lift"
               >
                 Agendar Diagnóstico de Procesos
               </Link>
