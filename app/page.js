@@ -10,7 +10,6 @@ import { Shield, Award, Calendar, Layers, Activity } from "lucide-react";
 
 const slides = [
   {
-    tag: "FILIAL EN ECUADOR DEL GRUPO CIBERNOS",
     title: "Rigor financiero y agilidad tecnológica.",
     subtitle: "BPO especializado para la banca en Ecuador. Transformamos su back office en un motor de eficiencia automatizado y seguro.",
     cta: "Solicitar Consultoría",
