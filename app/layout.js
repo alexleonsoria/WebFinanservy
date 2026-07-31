@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Navbar";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -25,32 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="es" className={`${outfit.variable} ${inter.variable}`}>
       <body className="font-sans bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
         {/* Header Corporativo */}
-        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
-            {/* Logo */}
-            <a href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-              <Image
-                src="/images/Logo-Finanservy.png"
-                alt="Finanservy Logo"
-                width={340}
-                height={84}
-                className="h-16 w-auto object-contain"
-                priority
-              />
-            </a>
-
-            {/* Menú de Navegación */}
-            <nav className="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
-              <a href="/" className="hover:text-primary transition-colors">Inicio</a>
-              <a href="/nosotros" className="hover:text-primary transition-colors">Nosotros</a>
-              <a href="/servicios" className="hover:text-primary transition-colors">Servicios</a>
-              <a href="/casos-exito" className="hover:text-primary transition-colors">Casos de Éxito</a>
-              <a href="/contacto" className="px-4 py-2 rounded-sm bg-primary hover:bg-primary-dark text-white font-semibold transition-all hover-lift">
-                Contacto
-              </a>
-            </nav>
-          </div>
-        </header>
+        <Navbar />
 
         {/* Contenido Principal */}
         <main className="flex-grow">
