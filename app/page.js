@@ -11,54 +11,32 @@ import { Shield, Award, Calendar, Layers, Activity } from "lucide-react";
 const slides = [
   {
     tag: "FILIAL EN ECUADOR DEL GRUPO CIBERNOS",
-    title: "Unimos el rigor del negocio financiero con la agilidad de la tecnología punta.",
-    subtitle: "BPO especializado para la banca y sector corporativo en Ecuador. Transformamos el back office en un motor de eficiencia automatizado, seguro y bajo estricto cumplimiento normativo.",
-    cta: "Solicitar Consultoría de Procesos",
+    title: "Rigor financiero y agilidad tecnológica.",
+    subtitle: "BPO especializado para la banca en Ecuador. Transformamos su back office en un motor de eficiencia automatizado y seguro.",
+    cta: "Solicitar Consultoría",
     link: "/contacto",
-    image: "/images/Eficiencia_Externalizacion_Estrategica.jpg",
-    consoleTitle: "CORE_HYBRID_BPO_STATUS",
-    baseLogs: [
-      "> [INIT] Core Hybrid BPO active...",
-      "> [SLA] Monitoreo de colas de back office activo...",
-      "> [SYS] Chequeo de cumplimiento normativo: 100% OK",
-      "> [ISO] Escaneando logs de seguridad ISO 27001..."
-    ]
+    image: "/images/Eficiencia_Externalizacion_Estrategica.jpg"
   },
   {
     tag: "INNOVACIÓN TECNOLÓGICA BPO",
-    title: "Optimización Financiera con Inteligencia Operacional Enterprise.",
-    subtitle: "Reduzca hasta un 87% el tiempo de procesamiento con CONCILIA PRO. Automatización de conciliaciones masivas, matching inteligente y control de diferencias.",
+    title: "Optimización financiera con Inteligencia Operativa.",
+    subtitle: "Reduzca hasta un 87% el tiempo de procesamiento con CONCILIA PRO: conciliaciones masivas y matching automático.",
     cta: "Conocer CONCILIA PRO",
-    link: "/contacto",
-    image: "/images/Inteligencia_Operacional_Enterprise.jpg",
-    consoleTitle: "CONCILIA_PRO_SYSTEM_STATUS",
-    baseLogs: [
-      "> [INIT] Motor de matching CONCILIA PRO iniciado...",
-      "> [PROC] Reconciliando 12,450 registros transaccionales...",
-      "> [MATCH] Tasa de cuadre automático: 87% completado",
-      "> [OCR] Procesamiento OCR de documentos valorados... OK"
-    ]
+    link: "/servicios/procesos-administrativos",
+    image: "/images/Inteligencia_Operacional_Enterprise.jpg"
   },
   {
-    tag: "MÁS DE 50 AÑOS DE TRAYECTORIA GLOBAL",
-    title: "Garantía, Continuidad y Respaldo de Nivel Internacional.",
-    subtitle: "Operaciones BPO certificadas bajo estrictas normas internacionales de calidad y seguridad de la información para la banca ecuatoriana.",
-    cta: "Ver Certificaciones y Casos de Éxito",
+    tag: "MÁS DE 50 AÑOS DE TRAYECTORIA",
+    title: "Garantía y respaldo de nivel internacional.",
+    subtitle: "Operaciones BPO certificadas bajo normas ISO de calidad y seguridad de la información.",
+    cta: "Ver Casos de Éxito",
     link: "/casos-exito",
-    image: "/images/Respaldo_Institucional_Continuidad.jpg",
-    consoleTitle: "GLOBAL_AUDIT_COMPLIANCE",
-    baseLogs: [
-      "> [SYS] Auditoría internacional anual superada",
-      "> [ISO] Sistema de Gestión de Calidad (9001) activo",
-      "> [BCP] Plan de Continuidad de Negocio (BCP) cargado",
-      "> [SEC] Análisis de vectores de riesgo: 0 amenazas"
-    ]
+    image: "/images/Respaldo_Institucional_Continuidad.jpg"
   }
 ];
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [consoleLogs, setConsoleLogs] = useState([]);
 
   // Auto slide cada 8 segundos
   useEffect(() => {
@@ -67,48 +45,6 @@ export default function Home() {
     }, 8000);
     return () => clearInterval(timer);
   }, []);
-
-  // Inicializa logs bases al cambiar diapositiva
-  useEffect(() => {
-    setConsoleLogs(slides[currentSlide].baseLogs);
-  }, [currentSlide]);
-
-  // Simulación de actualizaciones de consola en tiempo real
-  useEffect(() => {
-    const logInterval = setInterval(() => {
-      const updatesMap = {
-        0: [
-          "> [SYNC] Integrando colas de digitalización bancaria...",
-          "> [SEC] Claves criptográficas rotadas con éxito.",
-          "> [SYS] Procesamiento por lotes finalizado sin errores.",
-          "> [SLA] Tiempo promedio de resolución: 180ms."
-        ],
-        1: [
-          "> [OCR] Lectura de firmas completada con 99.9% precisión.",
-          "> [SYNC] Sincronización realizada con Core Bancario.",
-          "> [AUTO] Cuadre masivo de transferencias interbancarias... OK",
-          "> [MATCH] Auditoría de discrepancias conciliada con éxito."
-        ],
-        2: [
-          "> [ISO] Evaluando conformidad ISO 9001 e ISO 27001...",
-          "> [SYS] Respaldo automatizado cifrado y replicado en Cloud.",
-          "> [BCP] Simulación de recuperación de desastres: 100% OK",
-          "> [SEC] Escaneo de vulnerabilidades sin alertas críticas."
-        ]
-      };
-
-      const currentUpdates = updatesMap[currentSlide];
-      const randomUpdate = currentUpdates[Math.floor(Math.random() * currentUpdates.length)];
-      
-      setConsoleLogs((prev) => {
-        const next = [...prev, randomUpdate];
-        if (next.length > 5) next.shift();
-        return next;
-      });
-    }, 4000);
-
-    return () => clearInterval(logInterval);
-  }, [currentSlide]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -134,69 +70,35 @@ export default function Home() {
             <div className="absolute inset-0 bg-slate-950/50 z-10" />
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="max-w-3xl space-y-6 text-left">
                 
-                {/* Columna Texto */}
-                <div className="lg:col-span-7 space-y-6 text-left">
-                  <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
-                    {slide.tag}
-                  </div>
-                  <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
-                    {slide.title}
-                  </h1>
-                  <p className="text-lg text-slate-200 leading-relaxed max-w-2xl font-light">
-                    {slide.subtitle}
-                  </p>
-                  
-                  {/* CTA Botón */}
-                  <div className="pt-4">
-                    <Link
-                      href={slide.link}
-                      className="inline-block px-6 py-3 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
-                    >
-                      {slide.cta}
-                    </Link>
-                  </div>
+                {/* Tag Superior */}
+                <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
+                  {slide.tag}
                 </div>
-
-                {/* Columna Consola Técnica (Oculto en móvil) */}
-                <div className="hidden lg:block lg:col-span-5">
-                  <div className="bg-slate-950/80 border border-slate-800 p-6 rounded-md shadow-2xl backdrop-blur-sm space-y-4">
-                    <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#96C11F] animate-pulse" />
-                        <span className="font-mono text-xs text-slate-400 font-bold tracking-wider">
-                          {slide.consoleTitle}
-                        </span>
-                      </div>
-                      <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest">
-                        SYSTEM ACTIVE
-                      </span>
-                    </div>
-                    <div className="space-y-2.5 font-mono text-xs min-h-[140px] flex flex-col justify-end text-left">
-                      {consoleLogs.map((log, idx) => {
-                        let colorClass = "text-slate-400";
-                        if (log.includes("OK") || log.includes("precisión") || log.includes("exceso") || log.includes("superada")) {
-                          colorClass = "text-[#96C11F]";
-                        } else if (log.includes("[INIT]")) {
-                          colorClass = "text-white font-bold";
-                        } else if (log.includes("rotadas") || log.includes("cargado")) {
-                          colorClass = "text-blue-400";
-                        }
-                        return (
-                          <p key={idx} className={`${colorClass} transition-all duration-300`}>
-                            {log}
-                          </p>
-                        );
-                      })}
-                    </div>
-                  </div>
+                {/* Título H1 */}
+                <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
+                  {slide.title}
+                </h1>
+                {/* Subtítulo */}
+                <p className="text-lg text-slate-200 leading-relaxed max-w-2xl font-light">
+                  {slide.subtitle}
+                </p>
+                
+                {/* CTA Botón */}
+                <div className="pt-4">
+                  <Link
+                    href={slide.link}
+                    className="inline-block px-6 py-3 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
+                  >
+                    {slide.cta}
+                  </Link>
                 </div>
-
               </div>
             </div>
           </div>
         ))}
+
 
         {/* Indicadores de Posición Inferiores */}
         <div className="absolute bottom-8 left-0 right-0 z-30">
