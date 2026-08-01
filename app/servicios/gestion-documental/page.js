@@ -27,15 +27,204 @@ import {
   UserCheck
 } from "lucide-react";
 
+// Custom Premium Outline SVGs
+const FoldedDocumentIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" />
+    <path d="M14 2v4a1 1 0 0 0 1 1h4" />
+  </svg>
+);
+
+const KeyboardHandsIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="14" width="20" height="8" rx="1" />
+    <path d="M6 17h12M4 17h.01M19 17h.01M4 20h16" />
+    <path d="M5 13.5c0-3 1-5 2-6m-1.5 6c.5-4 1.5-6 3-6.5m-.5 6.5c.8-4 2.3-6 3.3-6" />
+    <path d="M19 13.5c0-3-1-5-2-6m1.5 6c-.5-4-1.5-6-3-6.5m.5 6.5c-.8-4-2.3-6-3.3-6" />
+  </svg>
+);
+
+const EyeInspectionIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 5V2m-7 5L3 5m14 2 2-2" />
+  </svg>
+);
+
+const DatabaseCylinderIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <ellipse cx="12" cy="5" rx="9" ry="3" />
+    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+    <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+  </svg>
+);
+
+const FolderIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+  </svg>
+);
+
+const DocumentIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+    <line x1="7" y1="8" x2="17" y2="8" />
+    <line x1="7" y1="12" x2="17" y2="12" />
+    <line x1="7" y1="16" x2="13" y2="16" />
+  </svg>
+);
+
+const BrainCircuitsIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22a7 7 0 0 1-7-7c0-2 1.5-3.5 1.5-3.5A6 6 0 0 1 12 2v20z" />
+    <path d="M12 2a6 6 0 0 1 5.5 9.5s1.5 1.5 1.5 3.5a7 7 0 0 1-7 7" />
+    <circle cx="16" cy="7" r="1" fill="currentColor" />
+    <path d="M12 7h3m-1 0v4m0 0h3" />
+    <circle cx="17" cy="15" r="1" fill="currentColor" />
+    <path d="M12 15h4m-2 0v3m0 0h2" />
+  </svg>
+);
+
+const LightningBoltIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+  </svg>
+);
+
+const UserCheckIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="8.5" cy="7" r="4" />
+    <polyline points="17 11 19 13 23 9" />
+  </svg>
+);
+
+const DatabaseCheckIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <ellipse cx="10" cy="5" rx="7" ry="2.5" />
+    <path d="M3 5v14c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5V5" />
+    <path d="M3 12c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5" />
+    <polyline points="16 13 18.5 15.5 23 11" />
+  </svg>
+);
+
+const ShieldCheckIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <polyline points="9 11 11 13 15 9" />
+  </svg>
+);
+
 export const metadata = {
   title: "Gestión Documental Inteligente | Finanservy",
   description: "Transforme procesos documentales críticos en flujos digitales rápidos, seguros y trazables mediante automatización inteligente para banca y finanzas.",
 };
 
 export default function GestionDocumental() {
+  
+  // Traditional steps definitions
+  const traditionalSteps = [
+    {
+      num: "01",
+      title: "Documento",
+      desc: "Recepción física o digital.",
+      icon: FoldedDocumentIcon
+    },
+    {
+      num: "02",
+      title: "Digitación manual",
+      desc: "Ingreso manual de datos.",
+      icon: KeyboardHandsIcon
+    },
+    {
+      num: "03",
+      title: "Validación visual",
+      desc: "Revisión manual de la información.",
+      icon: EyeInspectionIcon
+    },
+    {
+      num: "04",
+      title: "Registro manual",
+      desc: "Carga manual al sistema.",
+      icon: DatabaseCylinderIcon
+    },
+    {
+      num: "05",
+      title: "Archivo",
+      desc: "Almacenamiento físico o digital.",
+      icon: FolderIcon
+    }
+  ];
+
+  // Optimized steps definitions
+  const optimizedSteps = [
+    {
+      num: "01",
+      title: "Documento",
+      desc: "Recepción digital.",
+      icon: DocumentIcon
+    },
+    {
+      num: "02",
+      title: "Lectura inteligente",
+      desc: "Interpretación automática del documento.",
+      icon: BrainCircuitsIcon
+    },
+    {
+      num: "03",
+      title: "Extracción automática",
+      desc: "Datos identificados y estructurados.",
+      icon: LightningBoltIcon
+    },
+    {
+      num: "04",
+      title: "Validación por excepción",
+      desc: "El operador solo valida casos necesarios.",
+      icon: UserCheckIcon
+    },
+    {
+      num: "05",
+      title: "Registro automático",
+      desc: "Carga automática al sistema.",
+      icon: DatabaseCheckIcon
+    },
+    {
+      num: "06",
+      title: "Auditoría y trazabilidad",
+      desc: "Seguimiento completo del proceso.",
+      icon: ShieldCheckIcon
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
       
+      {/* Inline styles for DrawLine & FadeInUp animations */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes drawLine {
+          from { height: 0; }
+          to { height: 100%; }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-draw-line {
+          animation: drawLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          transform-origin: top;
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
+      `}} />
+
       {/* HERO SECTION */}
       <section className="relative min-h-[85vh] flex items-center bg-slate-950 border-b border-slate-900 overflow-hidden py-16 md:py-24">
         {/* Background Image */}
@@ -213,7 +402,7 @@ export default function GestionDocumental() {
         </div>
       </section>
 
-      {/* SECCIÓN 2: ASÍ TRANSFORMAMOS EL PROCESO (ANTES vs DESPUÉS) - REDISEÑADO */}
+      {/* SECCIÓN 2: ASÍ TRANSFORMAMOS EL PROCESO (ANTES vs DESPUÉS) - REDISEÑO TOTAL PREMIUM */}
       <section className="py-20 bg-slate-100/50 border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -227,12 +416,150 @@ export default function GestionDocumental() {
             <div className="h-1.5 w-16 bg-[#96C11F] mx-auto rounded-full" />
           </div>
 
-          <div className="max-w-5xl mx-auto bg-white border border-slate-200/80 rounded-sm p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <img
-              src="/images/procesodocumentalad.jpg"
-              alt="Comparativa de Transformación Digital del Proceso Documental"
-              className="w-full h-auto rounded-sm object-contain"
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            
+            {/* COLUMNA IZQUIERDA: PROCESO TRADICIONAL */}
+            <div className="space-y-10">
+              <div className="space-y-2 text-left">
+                <h3 className="font-outfit font-extrabold text-2xl text-red-600 tracking-tight">
+                  PROCESO TRADICIONAL
+                </h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Procesos manuales con mayor esfuerzo operativo y menor eficiencia.
+                </p>
+              </div>
+
+              {/* Timeline Container */}
+              <div className="relative pl-8 border-l border-dashed border-red-200 space-y-8">
+                {/* Simulated drawing timeline line with absolute height */}
+                <div className="absolute left-[-1px] top-0 bottom-0 w-[1px] bg-red-400 animate-draw-line pointer-events-none" />
+
+                {traditionalSteps.map((step, idx) => {
+                  const Icon = step.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="relative animate-fade-in-up"
+                      style={{ animationDelay: `${idx * 120}ms` }}
+                    >
+                      {/* Timeline dot identifier */}
+                      <div className="absolute -left-[41px] top-6 w-5 h-5 rounded-full bg-red-500 border-4 border-slate-50 flex items-center justify-center shadow-sm z-10" />
+
+                      {/* Card layout */}
+                      <div className="bg-white border border-slate-200/80 p-6 rounded-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-in-out flex flex-col items-center text-center space-y-4">
+                        <span className="text-[11px] font-mono font-extrabold text-red-500 uppercase tracking-widest bg-red-50 px-2 py-0.5 rounded-sm">
+                          Paso {step.num}
+                        </span>
+                        {/* Icon occupies ~60% width of card, outline stroke */}
+                        <div className="w-[60%] aspect-video max-w-[120px] text-red-500 flex items-center justify-center">
+                          <Icon className="w-12 h-12 stroke-[1.5]" />
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className="font-outfit font-extrabold text-base text-slate-800 tracking-tight">
+                            {step.title}
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed font-light">
+                            {step.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Indicadores al pie */}
+              <div className="pt-6 border-t border-slate-200 grid grid-cols-2 gap-4 text-left">
+                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                  Mayor tiempo operativo
+                </span>
+                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                  Mayor riesgo de errores
+                </span>
+                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                  Baja trazabilidad
+                </span>
+                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                  Mayor carga administrativa
+                </span>
+              </div>
+            </div>
+
+            {/* COLUMNA DERECHA: PROCESO OPTIMIZADO */}
+            <div className="space-y-10">
+              <div className="space-y-2 text-left">
+                <h3 className="font-outfit font-extrabold text-2xl text-[#074875] tracking-tight">
+                  PROCESO OPTIMIZADO CON FINANSERVY
+                </h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Automatización inteligente, precisión y trazabilidad en cada etapa.
+                </p>
+              </div>
+
+              {/* Timeline Container */}
+              <div className="relative pl-8 border-l border-dashed border-[#96C11F]/30 space-y-8">
+                {/* Simulated drawing timeline line with absolute height */}
+                <div className="absolute left-[-1px] top-0 bottom-0 w-[1px] bg-[#96C11F] animate-draw-line pointer-events-none" />
+
+                {optimizedSteps.map((step, idx) => {
+                  const Icon = step.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="relative animate-fade-in-up"
+                      style={{ animationDelay: `${idx * 120}ms` }}
+                    >
+                      {/* Timeline dot identifier */}
+                      <div className="absolute -left-[41px] top-6 w-5 h-5 rounded-full bg-[#96C11F] border-4 border-slate-50 flex items-center justify-center shadow-sm z-10" />
+
+                      {/* Card layout */}
+                      <div className="bg-white border border-slate-200/80 p-6 rounded-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-in-out flex flex-col items-center text-center space-y-4">
+                        <span className="text-[11px] font-mono font-extrabold text-[#96C11F] uppercase tracking-widest bg-green-50 px-2 py-0.5 rounded-sm">
+                          Paso {step.num}
+                        </span>
+                        {/* Icon occupies ~60% width of card, outline stroke */}
+                        <div className="w-[60%] aspect-video max-w-[120px] text-[#96C11F] flex items-center justify-center">
+                          <Icon className="w-12 h-12 stroke-[1.5]" />
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className="font-outfit font-extrabold text-base text-slate-800 tracking-tight">
+                            {step.title}
+                          </h4>
+                          <p className="text-xs text-slate-500 leading-relaxed font-light">
+                            {step.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Beneficios al pie */}
+              <div className="pt-6 border-t border-slate-200 grid grid-cols-2 gap-4 text-left">
+                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
+                  Procesamiento más ágil
+                </span>
+                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
+                  Información más precisa
+                </span>
+                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
+                  Control total del proceso
+                </span>
+                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
+                  Operación preparada para crecer
+                </span>
+              </div>
+            </div>
+
           </div>
 
         </div>
