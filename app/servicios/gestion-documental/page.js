@@ -24,14 +24,20 @@ import {
   Cpu,
   Zap,
   FolderOpen,
-  UserCheck
+  UserCheck,
+  Target,
+  Crosshair,
+  TrendingUp as TrendingUpIcon
 } from "lucide-react";
 
-// Custom Premium Outline SVGs
+// Custom Premium Outline SVGs matching the composition reference
 const FoldedDocumentIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" />
     <path d="M14 2v4a1 1 0 0 0 1 1h4" />
+    <line x1="9" y1="9" x2="15" y2="9" />
+    <line x1="9" y1="13" x2="15" y2="13" />
+    <line x1="9" y1="17" x2="13" y2="17" />
   </svg>
 );
 
@@ -39,16 +45,22 @@ const KeyboardHandsIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="14" width="20" height="8" rx="1" />
     <path d="M6 17h12M4 17h.01M19 17h.01M4 20h16" />
-    <path d="M5 13.5c0-3 1-5 2-6m-1.5 6c.5-4 1.5-6 3-6.5m-.5 6.5c.8-4 2.3-6 3.3-6" />
-    <path d="M19 13.5c0-3-1-5-2-6m1.5 6c-.5-4-1.5-6-3-6.5m.5 6.5c-.8-4-2.3-6-3.3-6" />
+    {/* Left Hand */}
+    <path d="M5 13.5c0-3 1-5 2-6m-1.5 6c.5-4 1.5-6 3-6.5" />
+    {/* Right Hand */}
+    <path d="M19 13.5c0-3-1-5-2-6m1.5 6c-.5-4-1.5-6-3-6.5" />
   </svg>
 );
 
-const EyeInspectionIcon = ({ className }) => (
+const ValidationChecklistIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
-    <circle cx="12" cy="12" r="3" />
-    <path d="M12 5V2m-7 5L3 5m14 2 2-2" />
+    <rect x="6" y="2" width="10" height="4" rx="1" />
+    <path d="M16 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+    <polyline points="9 11 11 13 14 10" />
+    {/* Exclamation warning badge */}
+    <circle cx="18" cy="18" r="4" fill="white" className="stroke-red-500" />
+    <line x1="18" y1="16" x2="18" y2="18" className="stroke-red-500" />
+    <line x1="18" y1="20" x2="18" y2="20" className="stroke-red-500" />
   </svg>
 );
 
@@ -105,14 +117,14 @@ const DatabaseCheckIcon = ({ className }) => (
     <ellipse cx="10" cy="5" rx="7" ry="2.5" />
     <path d="M3 5v14c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5V5" />
     <path d="M3 12c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5" />
-    <polyline points="16 13 18.5 15.5 23 11" />
+    <polyline points="16 13 18.5 15.5 23 11" className="stroke-[#96C11F] stroke-[2px]" />
   </svg>
 );
 
 const ShieldCheckIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    <polyline points="9 11 11 13 15 9" />
+    <polyline points="9 11 11 13 15 9" className="stroke-[#96C11F] stroke-[2px]" />
   </svg>
 );
 
@@ -123,76 +135,76 @@ export const metadata = {
 
 export default function GestionDocumental() {
   
-  // Traditional steps definitions
+  // Traditional steps (Antes)
   const traditionalSteps = [
     {
-      num: "01",
+      num: 1,
       title: "Documento",
-      desc: "Recepción física o digital.",
+      desc: "Recepción física o digital",
       icon: FoldedDocumentIcon
     },
     {
-      num: "02",
-      title: "Digitación manual",
-      desc: "Ingreso manual de datos.",
+      num: 2,
+      title: "Digitación",
+      desc: "Ingreso manual de datos",
       icon: KeyboardHandsIcon
     },
     {
-      num: "03",
-      title: "Validación visual",
-      desc: "Revisión manual de la información.",
-      icon: EyeInspectionIcon
+      num: 3,
+      title: "Validación",
+      desc: "Revisión visual y verificaciones",
+      icon: ValidationChecklistIcon
     },
     {
-      num: "04",
-      title: "Registro manual",
-      desc: "Carga manual al sistema.",
+      num: 4,
+      title: "Registro",
+      desc: "Carga manual al sistema",
       icon: DatabaseCylinderIcon
     },
     {
-      num: "05",
+      num: 5,
       title: "Archivo",
-      desc: "Almacenamiento físico o digital.",
+      desc: "Almacenamiento físico o digital",
       icon: FolderIcon
     }
   ];
 
-  // Optimized steps definitions
+  // Optimized steps (Después)
   const optimizedSteps = [
     {
-      num: "01",
+      num: 1,
       title: "Documento",
-      desc: "Recepción digital.",
+      desc: "Recepción digital",
       icon: DocumentIcon
     },
     {
-      num: "02",
+      num: 2,
       title: "Lectura inteligente",
-      desc: "Interpretación automática del documento.",
+      desc: "IA interpreta el documento",
       icon: BrainCircuitsIcon
     },
     {
-      num: "03",
+      num: 3,
       title: "Extracción automática",
-      desc: "Datos identificados y estructurados.",
+      desc: "Datos identificados y estructurados",
       icon: LightningBoltIcon
     },
     {
-      num: "04",
-      title: "Validación por excepción",
-      desc: "El operador solo valida casos necesarios.",
+      num: 4,
+      title: "Validación asistida",
+      desc: "Revisión por excepción",
       icon: UserCheckIcon
     },
     {
-      num: "05",
+      num: 5,
       title: "Registro automático",
-      desc: "Carga automática al sistema.",
+      desc: "Carga directa al sistema",
       icon: DatabaseCheckIcon
     },
     {
-      num: "06",
-      title: "Auditoría y trazabilidad",
-      desc: "Seguimiento completo del proceso.",
+      num: 6,
+      title: "Trazabilidad completa",
+      desc: "Auditoría y control en tiempo real",
       icon: ShieldCheckIcon
     }
   ];
@@ -200,28 +212,20 @@ export default function GestionDocumental() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
       
-      {/* Inline styles for DrawLine & FadeInUp animations */}
+      {/* Dynamic reveal animations */}
       <style dangerouslySetInnerHTML={{__html: `
-        @keyframes drawLine {
-          from { height: 0; }
-          to { height: 100%; }
-        }
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateY(16px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
           }
         }
-        .animate-draw-line {
-          animation: drawLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          transform-origin: top;
-        }
         .animate-fade-in-up {
-          animation: fadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
       `}} />
 
@@ -402,7 +406,7 @@ export default function GestionDocumental() {
         </div>
       </section>
 
-      {/* SECCIÓN 2: ASÍ TRANSFORMAMOS EL PROCESO (ANTES vs DESPUÉS) - REDISEÑO TOTAL PREMIUM */}
+      {/* SECCIÓN 2: ASÍ TRANSFORMAMOS EL PROCESO - REDISEÑADO CON REFERENCIA A procesodocumentalad.jpg */}
       <section className="py-20 bg-slate-100/50 border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -416,150 +420,221 @@ export default function GestionDocumental() {
             <div className="h-1.5 w-16 bg-[#96C11F] mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Timeline Panels Row (ANTES vs DESPUÉS) */}
+          <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 relative">
             
-            {/* COLUMNA IZQUIERDA: PROCESO TRADICIONAL */}
-            <div className="space-y-10">
-              <div className="space-y-2 text-left">
-                <h3 className="font-outfit font-extrabold text-2xl text-red-600 tracking-tight">
-                  PROCESO TRADICIONAL
-                </h3>
-                <p className="text-sm text-slate-500 font-light leading-relaxed">
-                  Procesos manuales con mayor esfuerzo operativo y menor eficiencia.
-                </p>
-              </div>
+            {/* ANTES Panel */}
+            <div className="flex-1 bg-white border border-slate-200/80 rounded-sm p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="space-y-6">
+                <div className="text-left space-y-1">
+                  <span className="text-red-600 font-outfit font-extrabold text-xs uppercase tracking-widest">
+                    ANTES
+                  </span>
+                  <h3 className="font-outfit font-bold text-lg text-slate-800">
+                    Proceso tradicional
+                  </h3>
+                </div>
 
-              {/* Timeline Container */}
-              <div className="relative pl-8 border-l border-dashed border-red-200 space-y-8">
-                {/* Simulated drawing timeline line with absolute height */}
-                <div className="absolute left-[-1px] top-0 bottom-0 w-[1px] bg-red-400 animate-draw-line pointer-events-none" />
-
-                {traditionalSteps.map((step, idx) => {
-                  const Icon = step.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="relative animate-fade-in-up"
-                      style={{ animationDelay: `${idx * 120}ms` }}
-                    >
-                      {/* Timeline dot identifier */}
-                      <div className="absolute -left-[41px] top-6 w-5 h-5 rounded-full bg-red-500 border-4 border-slate-50 flex items-center justify-center shadow-sm z-10" />
-
-                      {/* Card layout */}
-                      <div className="bg-white border border-slate-200/80 p-6 rounded-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-in-out flex flex-col items-center text-center space-y-4">
-                        <span className="text-[11px] font-mono font-extrabold text-red-500 uppercase tracking-widest bg-red-50 px-2 py-0.5 rounded-sm">
-                          Paso {step.num}
-                        </span>
-                        {/* Icon occupies ~60% width of card, outline stroke */}
-                        <div className="w-[60%] aspect-video max-w-[120px] text-red-500 flex items-center justify-center">
-                          <Icon className="w-12 h-12 stroke-[1.5]" />
+                {/* Horizontal / Vertical Timeline Flow */}
+                <div className="flex flex-col lg:flex-row items-stretch justify-between gap-4 py-4">
+                  {traditionalSteps.map((step, idx) => {
+                    const Icon = step.icon;
+                    return (
+                      <div key={idx} className="flex-1 flex flex-col lg:flex-row items-center">
+                        <div className="flex-1 relative pt-4 pb-2 w-full flex flex-col items-center">
+                          {/* Circle step badge */}
+                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-red-600 text-white font-mono text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-sm z-10">
+                            {step.num}
+                          </div>
+                          
+                          {/* Minimal Card */}
+                          <div className="w-full bg-slate-50 border border-slate-200/50 rounded-sm p-4 pt-6 flex flex-col items-center text-center space-y-3 hover:-translate-y-1 hover:shadow-sm hover:border-slate-300 transition-all duration-300 h-full justify-start min-h-[170px] lg:min-h-[190px]">
+                            <div className="text-red-600 w-10 h-10 flex items-center justify-center shrink-0">
+                              <Icon className="w-8 h-8 stroke-[1.5]" />
+                            </div>
+                            <div className="space-y-1">
+                              <h4 className="font-outfit font-extrabold text-xs text-slate-800 tracking-tight leading-tight">
+                                {step.title}
+                              </h4>
+                              <p className="text-[10px] text-slate-400 font-light leading-normal">
+                                {step.desc}
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="space-y-1">
-                          <h4 className="font-outfit font-extrabold text-base text-slate-800 tracking-tight">
-                            {step.title}
-                          </h4>
-                          <p className="text-xs text-slate-500 leading-relaxed font-light">
-                            {step.desc}
-                          </p>
-                        </div>
+
+                        {/* Arrow separator */}
+                        {idx < traditionalSteps.length - 1 && (
+                          <>
+                            <div className="hidden lg:flex items-center justify-center text-red-300 shrink-0 px-0.5">
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="lg:hidden flex items-center justify-center text-red-300 shrink-0 my-1">
+                              <ChevronDown className="w-4 h-4" />
+                            </div>
+                          </>
+                        )}
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* Indicadores al pie */}
-              <div className="pt-6 border-t border-slate-200 grid grid-cols-2 gap-4 text-left">
-                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  Mayor tiempo operativo
-                </span>
-                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  Mayor riesgo de errores
-                </span>
-                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  Baja trazabilidad
-                </span>
-                <span className="flex items-center gap-2 text-xs font-medium text-slate-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  Mayor carga administrativa
-                </span>
+              {/* Red warning metrics banner at the bottom */}
+              <div className="mt-6 bg-red-50/50 border border-red-100 rounded-sm p-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-red-700 text-xs md:text-sm font-semibold">
+                <div className="flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-red-500" />
+                  <span className="uppercase tracking-wider text-[10px]">Indicadores tradicionales:</span>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+                  <span>Más tiempo</span>
+                  <span className="text-red-200">|</span>
+                  <span>Más errores</span>
+                  <span className="text-red-200">|</span>
+                  <span>Menor trazabilidad</span>
+                  <span className="text-red-200">|</span>
+                  <span>Mayor costo</span>
+                </div>
               </div>
             </div>
 
-            {/* COLUMNA DERECHA: PROCESO OPTIMIZADO */}
-            <div className="space-y-10">
-              <div className="space-y-2 text-left">
-                <h3 className="font-outfit font-extrabold text-2xl text-[#074875] tracking-tight">
-                  PROCESO OPTIMIZADO CON FINANSERVY
-                </h3>
-                <p className="text-sm text-slate-500 font-light leading-relaxed">
-                  Automatización inteligente, precisión y trazabilidad en cada etapa.
-                </p>
-              </div>
+            {/* Transition Circle Arrow */}
+            <div className="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-[#074875] text-[#96C11F] shadow-lg border-2 border-white z-20 hover:scale-110 transition-transform duration-300">
+              <ArrowRight className="w-5 h-5" />
+            </div>
 
-              {/* Timeline Container */}
-              <div className="relative pl-8 border-l border-dashed border-[#96C11F]/30 space-y-8">
-                {/* Simulated drawing timeline line with absolute height */}
-                <div className="absolute left-[-1px] top-0 bottom-0 w-[1px] bg-[#96C11F] animate-draw-line pointer-events-none" />
+            {/* DESPUÉS Panel */}
+            <div className="flex-1 bg-white border border-slate-200/80 rounded-sm p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="space-y-6">
+                <div className="text-left space-y-1">
+                  <span className="text-[#96C11F] font-outfit font-extrabold text-xs uppercase tracking-widest">
+                    DESPUÉS
+                  </span>
+                  <h3 className="font-outfit font-bold text-lg text-slate-800">
+                    Solución inteligente
+                  </h3>
+                </div>
 
-                {optimizedSteps.map((step, idx) => {
-                  const Icon = step.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="relative animate-fade-in-up"
-                      style={{ animationDelay: `${idx * 120}ms` }}
-                    >
-                      {/* Timeline dot identifier */}
-                      <div className="absolute -left-[41px] top-6 w-5 h-5 rounded-full bg-[#96C11F] border-4 border-slate-50 flex items-center justify-center shadow-sm z-10" />
-
-                      {/* Card layout */}
-                      <div className="bg-white border border-slate-200/80 p-6 rounded-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-in-out flex flex-col items-center text-center space-y-4">
-                        <span className="text-[11px] font-mono font-extrabold text-[#96C11F] uppercase tracking-widest bg-green-50 px-2 py-0.5 rounded-sm">
-                          Paso {step.num}
-                        </span>
-                        {/* Icon occupies ~60% width of card, outline stroke */}
-                        <div className="w-[60%] aspect-video max-w-[120px] text-[#96C11F] flex items-center justify-center">
-                          <Icon className="w-12 h-12 stroke-[1.5]" />
+                {/* Horizontal / Vertical Timeline Flow */}
+                <div className="flex flex-col lg:flex-row items-stretch justify-between gap-3 py-4">
+                  {optimizedSteps.map((step, idx) => {
+                    const Icon = step.icon;
+                    return (
+                      <div key={idx} className="flex-1 flex flex-col lg:flex-row items-center">
+                        <div className="flex-1 relative pt-4 pb-2 w-full flex flex-col items-center">
+                          {/* Circle step badge */}
+                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#96C11F] text-white font-mono text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-sm z-10">
+                            {step.num}
+                          </div>
+                          
+                          {/* Minimal Card */}
+                          <div className="w-full bg-slate-50 border border-slate-200/50 rounded-sm p-3 pt-6 flex flex-col items-center text-center space-y-3 hover:-translate-y-1 hover:shadow-sm hover:border-slate-300 transition-all duration-300 h-full justify-start min-h-[170px] lg:min-h-[190px]">
+                            <div className="text-[#96C11F] w-10 h-10 flex items-center justify-center shrink-0">
+                              <Icon className="w-8 h-8 stroke-[1.5]" />
+                            </div>
+                            <div className="space-y-1">
+                              <h4 className="font-outfit font-extrabold text-xs text-slate-800 tracking-tight leading-tight">
+                                {step.title}
+                              </h4>
+                              <p className="text-[10px] text-slate-400 font-light leading-normal">
+                                {step.desc}
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="space-y-1">
-                          <h4 className="font-outfit font-extrabold text-base text-slate-800 tracking-tight">
-                            {step.title}
-                          </h4>
-                          <p className="text-xs text-slate-500 leading-relaxed font-light">
-                            {step.desc}
-                          </p>
-                        </div>
+
+                        {/* Arrow separator */}
+                        {idx < optimizedSteps.length - 1 && (
+                          <>
+                            <div className="hidden lg:flex items-center justify-center text-green-300 shrink-0 px-0.5">
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="lg:hidden flex items-center justify-center text-green-300 shrink-0 my-1">
+                              <ChevronDown className="w-4 h-4" />
+                            </div>
+                          </>
+                        )}
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* Beneficios al pie */}
-              <div className="pt-6 border-t border-slate-200 grid grid-cols-2 gap-4 text-left">
-                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
-                  Procesamiento más ágil
-                </span>
-                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
-                  Información más precisa
-                </span>
-                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
-                  Control total del proceso
-                </span>
-                <span className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#96C11F] shrink-0" />
-                  Operación preparada para crecer
-                </span>
+              {/* Green check metrics banner at the bottom */}
+              <div className="mt-6 bg-green-50/50 border border-[#96C11F]/20 rounded-sm p-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-slate-850 text-xs md:text-sm font-semibold">
+                <div className="flex items-center gap-2">
+                  <span className="w-4 h-4 rounded-full bg-[#96C11F] text-white flex items-center justify-center text-[10px]">✓</span>
+                  <span className="uppercase tracking-wider text-[10px] text-[#074875]">Beneficios optimizados:</span>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+                  <span>Menos tiempo</span>
+                  <span className="text-green-200">|</span>
+                  <span>Menos errores</span>
+                  <span className="text-green-200">|</span>
+                  <span>Mayor trazabilidad</span>
+                  <span className="text-green-200">|</span>
+                  <span>Menor costo</span>
+                </div>
               </div>
             </div>
 
+          </div>
+
+          {/* Bottom Results Banner (Full-Width) */}
+          <div className="max-w-7xl mx-auto mt-8 bg-white border border-slate-200/80 rounded-sm p-6 md:p-8 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-8 hover:shadow-md transition-shadow duration-300">
+            {/* Left Column */}
+            <div className="flex items-center gap-5 lg:w-1/2 text-left">
+              <div className="w-14 h-14 rounded-full bg-[#96C11F]/10 flex items-center justify-center text-[#96C11F] shrink-0">
+                <TrendingUpIcon className="w-7 h-7" />
+              </div>
+              <p className="font-outfit font-extrabold text-slate-800 text-base md:text-lg leading-snug">
+                Resultados que se traducen en eficiencia operativa, calidad de datos y una operación preparada para crecer.
+              </p>
+            </div>
+
+            {/* Right Metrics Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:w-1/2 w-full pt-6 lg:pt-0 border-t lg:border-t-0 lg:border-l border-slate-200 lg:pl-8">
+              
+              {/* Metric 1 */}
+              <div className="flex items-start gap-3 text-left">
+                <Clock className="w-5 h-5 text-[#074875] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-outfit font-bold text-xs text-slate-800 uppercase tracking-wide">
+                    Mayor velocidad
+                  </h4>
+                  <p className="text-[10px] text-slate-400 mt-0.5 leading-normal">
+                    Procesamiento más ágil y oportuno
+                  </p>
+                </div>
+              </div>
+
+              {/* Metric 2 */}
+              <div className="flex items-start gap-3 text-left">
+                <Crosshair className="w-5 h-5 text-[#074875] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-outfit font-bold text-xs text-slate-800 uppercase tracking-wide">
+                    Más precisión
+                  </h4>
+                  <p className="text-[10px] text-slate-400 mt-0.5 leading-normal">
+                    Datos confiables desde el origen del documento
+                  </p>
+                </div>
+              </div>
+
+              {/* Metric 3 */}
+              <div className="flex items-start gap-3 text-left">
+                <Award className="w-5 h-5 text-[#074875] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-outfit font-bold text-xs text-slate-800 uppercase tracking-wide">
+                    Mayor control
+                  </h4>
+                  <p className="text-[10px] text-slate-400 mt-0.5 leading-normal">
+                    Visibilidad total del estado de su operación
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
