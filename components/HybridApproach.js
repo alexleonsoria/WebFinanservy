@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Landmark, Cog, TrendingUp } from "lucide-react";
 
 export default function HybridApproach() {
   return (
@@ -26,7 +26,7 @@ export default function HybridApproach() {
               NUESTRA DIFERENCIA
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 font-outfit">
-              La tecnología es nuestra herramienta. El conocimiento del negocio financiero es nuestro verdadero diferencial.
+              Hablamos tu idioma
             </h2>
             <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl font-light mb-6">
               No implementamos tecnología por tendencia. Diseñamos procesos que reducen riesgos, optimizan la operación y generan resultados medibles para su negocio.
@@ -37,33 +37,48 @@ export default function HybridApproach() {
           <div className="flex flex-col gap-4 mb-8">
             
             {/* Tarjeta 1 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all">
-              <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
-                01. Conocimiento del negocio financiero
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Diseñamos procesos alineados a la realidad operativa de bancos, aseguradoras y entidades financieras.
-              </p>
+            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all flex gap-4 items-start">
+              <div className="text-blue-600 mt-1 shrink-0">
+                <Landmark className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
+                  01. Conocimiento del negocio financiero
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Diseñamos procesos alineados a la realidad operativa de bancos, aseguradoras y entidades financieras.
+                </p>
+              </div>
             </div>
 
             {/* Tarjeta 2 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all">
-              <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
-                02. Tecnología aplicada con propósito
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Automatizamos únicamente donde genera mayor impacto, mejorando eficiencia, trazabilidad y control.
-              </p>
+            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all flex gap-4 items-start">
+              <div className="text-blue-600 mt-1 shrink-0">
+                <Cog className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
+                  02. Tecnología aplicada con propósito
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Automatizamos únicamente donde genera mayor impacto, mejorando eficiencia, trazabilidad y control.
+                </p>
+              </div>
             </div>
 
             {/* Tarjeta 3 */}
-            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all">
-              <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
-                03. Operaciones listas para crecer
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Combinamos talento especializado, metodologías y plataformas propias para escalar su operación sin perder calidad ni cumplimiento.
-              </p>
+            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all flex gap-4 items-start">
+              <div className="text-blue-600 mt-1 shrink-0">
+                <TrendingUp className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
+                  03. Operaciones preparadas para crecer
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Combinamos talento especializado, metodologías y plataformas propias para escalar su operación sin perder calidad ni cumplimiento.
+                </p>
+              </div>
             </div>
 
           </div>
