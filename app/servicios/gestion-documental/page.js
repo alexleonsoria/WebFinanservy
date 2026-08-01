@@ -580,6 +580,15 @@ export default function GestionDocumental() {
 
           </div>
 
+          {/* Reference visual composition image */}
+          <div className="max-w-7xl mx-auto mt-8 bg-white border border-slate-200/80 rounded-sm p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <img
+              src="/images/procesodocumentalad.jpg"
+              alt="Diagrama de Transformación del Proceso Documental"
+              className="w-full h-auto rounded-sm object-contain"
+            />
+          </div>
+
           {/* Bottom Results Banner (Full-Width) */}
           <div className="max-w-7xl mx-auto mt-8 bg-white border border-slate-200/80 rounded-sm p-6 md:p-8 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-8 hover:shadow-md transition-shadow duration-300">
             {/* Left Column */}
