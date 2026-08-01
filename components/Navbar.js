@@ -88,9 +88,9 @@ export default function Navbar() {
                 <Link href="/servicios" className="p-3 text-sm text-[#96C11F] font-bold hover:bg-slate-800 rounded-sm transition-colors border-b border-slate-800/60 mb-1 flex items-center justify-between">
                   Ver todas las Soluciones <ChevronRight className="w-3 h-3" />
                 </Link>
-                <span className="px-3 py-2 text-sm text-slate-400 font-medium hover:bg-slate-800/40 rounded-sm cursor-not-allowed opacity-50 flex items-center justify-between">
-                  Gestión Documental Inteligente <span className="text-[9px] uppercase tracking-wider text-[#96C11F] bg-[#96C11F]/10 px-1.5 py-0.5 rounded font-mono font-bold">Próximamente</span>
-                </span>
+                <Link href="/servicios/gestion-documental" className="px-3 py-2 text-sm text-slate-300 hover:text-[#96C11F] font-medium hover:bg-slate-800 rounded-sm transition-colors flex items-center justify-between">
+                  Gestión Documental Inteligente
+                </Link>
                 <span className="px-3 py-2 text-sm text-slate-400 font-medium hover:bg-slate-800/40 rounded-sm cursor-not-allowed opacity-50 flex items-center justify-between">
                   Back Office Administrativo <span className="text-[9px] uppercase tracking-wider text-[#96C11F] bg-[#96C11F]/10 px-1.5 py-0.5 rounded font-mono font-bold">Próximamente</span>
                 </span>
@@ -239,7 +239,13 @@ export default function Navbar() {
                 >
                   Ver todas las Soluciones
                 </Link>
-                <span className="text-sm text-slate-400 font-medium opacity-60">Gestión Documental Inteligente</span>
+                <Link
+                  href="/servicios/gestion-documental"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm text-slate-300 font-medium hover:text-white transition-colors"
+                >
+                  Gestión Documental Inteligente
+                </Link>
                 <span className="text-sm text-slate-400 font-medium opacity-60">Back Office Administrativo</span>
                 <span className="text-sm text-slate-400 font-medium opacity-60">IA Conversacional</span>
                 <span className="text-sm text-slate-400 font-medium opacity-60">Compliance & Gobernanza</span>
