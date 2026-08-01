@@ -193,19 +193,79 @@ export default function Home() {
       {/* BLOQUE 4: Ecosistema de Inteligencia Operativa */}
       <EcosystemSection />
 
-      {/* BLOQUE 5: Respaldo, Seguridad y Compliance por Diseño */}
+      {/* BLOQUE 5: Resultados Obtenidos */}
+      <section className="py-20 bg-slate-50 border-t border-b border-slate-200/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#074875] bg-[#074875]/5 px-3 py-1.5 rounded-sm border border-[#074875]/10">
+              RESULTADOS
+            </div>
+            <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl text-[#074875] tracking-tight">
+              Resultados que impulsan operaciones más eficientes.
+            </h2>
+            <div className="h-1.5 w-16 bg-[#96C11F] mx-auto rounded-full" />
+            <p className="text-slate-600 text-lg font-light leading-relaxed">
+              Nuestros clientes obtienen mejoras medibles en productividad, eficiencia y continuidad operativa.
+            </p>
+          </div>
+
+          {/* Grid de 4 Indicadores */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Indicador 1 */}
+            <div className="bg-white border border-slate-200/80 p-8 rounded-sm text-center shadow-sm hover-lift transition-all">
+              <div className="w-12 h-12 bg-[#074875]/5 rounded-sm flex items-center justify-center text-[#074875] mx-auto mb-4">
+                <Activity className="w-6 h-6" />
+              </div>
+              <div className="font-outfit font-extrabold text-3xl md:text-4xl text-[#074875]">Hasta 40%</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-2">Menos carga operativa</div>
+            </div>
+
+            {/* Indicador 2 */}
+            <div className="bg-white border border-slate-200/80 p-8 rounded-sm text-center shadow-sm hover-lift transition-all">
+              <div className="w-12 h-12 bg-[#074875]/5 rounded-sm flex items-center justify-center text-[#074875] mx-auto mb-4">
+                <Layers className="w-6 h-6" />
+              </div>
+              <div className="font-outfit font-extrabold text-3xl md:text-4xl text-[#074875]">Hasta 87%</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-2">Menos tiempo de ciclo</div>
+            </div>
+
+            {/* Indicador 3 */}
+            <div className="bg-white border border-slate-200/80 p-8 rounded-sm text-center shadow-sm hover-lift transition-all">
+              <div className="w-12 h-12 bg-[#074875]/5 rounded-sm flex items-center justify-center text-[#074875] mx-auto mb-4">
+                <Award className="w-6 h-6" />
+              </div>
+              <div className="font-outfit font-extrabold text-3xl md:text-4xl text-[#074875]">+50 años</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-2">Experiencia del Grupo Cibernos</div>
+            </div>
+
+            {/* Indicador 4 */}
+            <div className="bg-white border border-slate-200/80 p-8 rounded-sm text-center shadow-sm hover-lift transition-all">
+              <div className="w-12 h-12 bg-[#074875]/5 rounded-sm flex items-center justify-center text-[#074875] mx-auto mb-4">
+                <Shield className="w-6 h-6" />
+              </div>
+              <div className="font-outfit font-extrabold text-3xl md:text-4xl text-[#074875]">7 países</div>
+              <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-2">Presencia regional</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BLOQUE 6: Respaldo, Seguridad y Compliance por Diseño */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Frase Fuerza Principal */}
-          <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
+          <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
             <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/10 px-3 py-1.5 rounded-sm">
               SEGURIDAD Y COMPLIANCE POR DISEÑO
             </div>
-            <h2 className="font-outfit font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#074875] tracking-tight leading-snug">
-              &ldquo;Innovación continua sobre plataformas de alta disponibilidad. Garantizamos la continuidad de sus operaciones y el estricto cumplimiento normativo.&rdquo;
+            <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl text-[#074875] tracking-tight">
+              ¿Por qué confiar su operación a FinanServy?
             </h2>
             <div className="h-1.5 w-20 bg-[#96C11F] mx-auto rounded-full" />
+            <p className="text-slate-600 text-lg font-light leading-relaxed max-w-3xl mx-auto">
+              Nuestros procesos se respaldan en estándares internacionales que garantizan seguridad, calidad, continuidad y excelencia operativa.
+            </p>
           </div>
 
           {/* Grid de Certificaciones ISO */}
@@ -218,10 +278,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-outfit font-extrabold text-lg text-slate-800 tracking-tight">
-                    ISO 27001
+                    Seguridad
                   </h3>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 font-bold mt-0.5">
-                    Seguridad de la Información
+                  <p className="text-xs uppercase tracking-wider text-[#074875] font-bold mt-0.5">
+                    ISO 27001
                   </p>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">
@@ -241,10 +301,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-outfit font-extrabold text-lg text-slate-800 tracking-tight">
-                    ISO 9001
+                    Calidad
                   </h3>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 font-bold mt-0.5">
-                    Gestión de la Calidad
+                  <p className="text-xs uppercase tracking-wider text-[#074875] font-bold mt-0.5">
+                    ISO 9001
                   </p>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">
@@ -264,10 +324,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-outfit font-extrabold text-lg text-slate-800 tracking-tight">
-                    ISO 22301
+                    Continuidad
                   </h3>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 font-bold mt-0.5">
-                    Continuidad de Negocio
+                  <p className="text-xs uppercase tracking-wider text-[#074875] font-bold mt-0.5">
+                    ISO 22301
                   </p>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">
@@ -287,10 +347,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-outfit font-extrabold text-lg text-slate-800 tracking-tight">
-                    ISO 20000-1
+                    Soporte Enterprise
                   </h3>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 font-bold mt-0.5">
-                    Gestión de Servicios TI
+                  <p className="text-xs uppercase tracking-wider text-[#074875] font-bold mt-0.5">
+                    ISO 20000-1
                   </p>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">
@@ -330,20 +390,36 @@ export default function Home() {
 
       {/* Carrusel de Clientes y Referencias de Éxito */}
       <section className="py-16 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-            Marcas e Instituciones de Primer Nivel que Confían en Nosotros
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 lg:gap-24 opacity-60">
-            <div className="flex flex-col items-center justify-center font-bold text-slate-900 hover:opacity-100 transition-opacity cursor-pointer">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          <div className="space-y-2 mb-8">
+            <h2 className="font-outfit font-extrabold text-2xl md:text-3xl text-[#074875] tracking-tight">
+              Empresas que confían en nuestra experiencia
+            </h2>
+            <p className="text-slate-500 text-sm md:text-base font-light max-w-2xl mx-auto">
+              Organizaciones líderes del sector financiero que confían en nuestras soluciones y experiencia.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 lg:gap-24">
+            <div className="flex flex-col items-center justify-center font-bold text-slate-400 hover:text-[#074875] opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
               <span className="text-xl font-outfit tracking-tight">Banco Internacional</span>
               <span className="text-[9px] uppercase tracking-wider text-[#074875] font-semibold mt-0.5">Referencia Principal Ecuador</span>
             </div>
-            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-slate-900 hover:opacity-100 transition-all cursor-pointer">Banco Pichincha</div>
-            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-slate-900 hover:opacity-100 transition-all cursor-pointer">BBVA</div>
-            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-slate-900 hover:opacity-100 transition-all cursor-pointer">Santander</div>
-            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-slate-900 hover:opacity-100 transition-all cursor-pointer">MAPFRE</div>
-            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-slate-900 hover:opacity-100 transition-all cursor-pointer">Adeslas</div>
+            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-yellow-600 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
+              Banco Pichincha
+            </div>
+            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-blue-700 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
+              BBVA
+            </div>
+            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-red-600 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
+              Santander
+            </div>
+            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-red-500 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
+              MAPFRE
+            </div>
+            <div className="font-outfit font-extrabold text-xl text-slate-400 hover:text-blue-500 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer">
+              Adeslas
+            </div>
           </div>
         </div>
       </section>
