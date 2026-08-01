@@ -11,23 +11,23 @@ import { Shield, Award, Calendar, Layers, Activity } from "lucide-react";
 const slides = [
   {
     title: "Rigor financiero y agilidad tecnológica.",
-    subtitle: "BPO especializado para la banca en Ecuador. Transformamos su back office en un motor de eficiencia automatizado y seguro.",
-    cta: "Solicitar Consultoría",
+    subtitle: "Reducimos costos, automatizamos procesos críticos y mejoramos la trazabilidad del back office financiero con tecnología especializada.",
+    cta: "Agendar diagnóstico de procesos",
     link: "/contacto",
     image: "/images/Eficiencia_Externalizacion_Estrategica.jpg"
   },
   {
-    title: "Optimización financiera con Inteligencia Operativa.",
-    subtitle: "Reduzca hasta un 87% el tiempo de procesamiento con CONCILIA PRO: conciliaciones masivas y matching automático.",
+    title: "Conciliaciones más rápidas. Decisiones más inteligentes.",
+    subtitle: "Automatice conciliaciones masivas y reduzca hasta un 87% los tiempos de procesamiento con CONCILIA PRO.",
     cta: "Conocer CONCILIA PRO",
     link: "/servicios/procesos-administrativos",
     image: "/images/Inteligencia_Operacional_Enterprise.jpg"
   },
   {
-    title: "Garantía y respaldo de nivel internacional.",
-    subtitle: "Operaciones BPO certificadas bajo normas ISO de calidad y seguridad de la información.",
-    cta: "Ver Casos de Éxito",
-    link: "/casos-exito",
+    title: "Su operación crítica, respaldada por estándares internacionales.",
+    subtitle: "Procesos BPO respaldados por certificaciones internacionales de calidad, continuidad y seguridad de la información.",
+    cta: "Agendar diagnóstico de procesos",
+    link: "/contacto",
     image: "/images/Respaldo_Institucional_Continuidad.jpg"
   }
 ];
@@ -85,13 +85,26 @@ export default function Home() {
                 </p>
                 
                 {/* CTA Botón */}
-                <div className="pt-4">
+                <div className="pt-4 space-y-4">
                   <Link
                     href={slide.link}
                     className="inline-block px-6 py-3 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
                   >
                     {slide.cta}
                   </Link>
+                  {index === 0 && (
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-slate-300 text-xs sm:text-sm font-light">
+                      <span className="flex items-center gap-1.5">
+                        <span className="text-[#96C11F] font-bold">✓</span> Diagnóstico inicial
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <span className="text-[#96C11F] font-bold">✓</span> Especialistas en BPO Financiero
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <span className="text-[#96C11F] font-bold">✓</span> Atención para Ecuador y Latinoamérica
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
