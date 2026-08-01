@@ -227,121 +227,12 @@ export default function GestionDocumental() {
             <div className="h-1.5 w-16 bg-[#96C11F] mx-auto rounded-full" />
           </div>
 
-          <div className="space-y-16">
-            
-            {/* ANTES: Proceso Tradicional */}
-            <div className="bg-white border border-slate-200/80 rounded-sm p-8 shadow-sm">
-              <div className="flex items-center gap-2 mb-8">
-                <span className="h-3 w-3 rounded-full bg-red-500" />
-                <h3 className="font-outfit font-extrabold text-lg text-slate-800 uppercase tracking-wider">
-                  Proceso Tradicional (Lento y manual)
-                </h3>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 relative">
-                {/* Step 1 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
-                    <FileText className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-slate-800">1. Documento</span>
-                  <span className="text-xs text-slate-500 mt-1 font-light">Recepción manual</span>
-                </div>
-                {/* Step 2 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
-                    <Keyboard className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-slate-800">2. Digitación</span>
-                  <span className="text-xs text-slate-500 mt-1 font-light">Ingreso de datos</span>
-                </div>
-                {/* Step 3 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
-                    <AlertTriangle className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-slate-800">3. Validación</span>
-                  <span className="text-xs text-slate-500 mt-1 font-light">Revisión visual</span>
-                </div>
-                {/* Step 4 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
-                    <Database className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-slate-800">4. Registro</span>
-                  <span className="text-xs text-slate-500 mt-1 font-light">Carga manual</span>
-                </div>
-                {/* Step 5 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
-                    <Layers className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-slate-800">5. Archivo</span>
-                  <span className="text-xs text-slate-500 mt-1 font-light">Almacén físico</span>
-                </div>
-              </div>
-            </div>
-
-            {/* DESPUÉS: Solución Inteligente */}
-            <div className="bg-slate-900 text-white border border-slate-800 rounded-sm p-8 shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-[#074875]/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="flex items-center gap-2 mb-8 relative z-10">
-                <span className="h-3 w-3 rounded-full bg-[#96C11F] animate-pulse" />
-                <h3 className="font-outfit font-extrabold text-lg text-[#96C11F] uppercase tracking-wider">
-                  Solución Inteligente (Automatizado y controlado)
-                </h3>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-6 gap-6 relative z-10">
-                {/* Step 1 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
-                    <FileText className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-white">1. Documento</span>
-                  <span className="text-xs text-slate-400 mt-1 font-light">Entrada digital</span>
-                </div>
-                {/* Step 2 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
-                    <Workflow className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-white">2. Lectura</span>
-                  <span className="text-xs text-slate-400 mt-1 font-light">Clasificación IA</span>
-                </div>
-                {/* Step 3 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
-                    <Cpu className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-white">3. Extracción</span>
-                  <span className="text-xs text-slate-400 mt-1 font-light">Precisión 99.8%</span>
-                </div>
-                {/* Step 4 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
-                    <UserCheck className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-white">4. Validación</span>
-                  <span className="text-xs text-slate-400 mt-1 font-light">Asistida por excepción</span>
-                </div>
-                {/* Step 5 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
-                    <Zap className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-white">5. Registro</span>
-                  <span className="text-xs text-slate-400 mt-1 font-light">Directo en Core</span>
-                </div>
-                {/* Step 6 */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#96C11F]/20 text-[#96C11F] border border-[#96C11F]/40 flex items-center justify-center mb-3">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                  <span className="text-sm font-bold text-[#96C11F]">6. Auditoría</span>
-                  <span className="text-xs text-slate-300 mt-1 font-medium">Trazabilidad total</span>
-                </div>
-              </div>
-            </div>
-
+          <div className="max-w-5xl mx-auto bg-white border border-slate-200/80 rounded-sm p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <img
+              src="/images/procesodocumentalad.jpg"
+              alt="Comparativa de Transformación Digital del Proceso Documental"
+              className="w-full h-auto rounded-sm object-contain"
+            />
           </div>
 
         </div>
