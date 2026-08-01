@@ -12,14 +12,14 @@ export default function EcosystemSection() {
         {/* Encabezado */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/80 border border-[#074875]/50 px-3 py-1.5 rounded-sm">
-            TECNOLOGÍA Y EFICIENCIA
+            SOLUCIONES ESPECIALIZADAS
           </div>
           <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-            Ecosistema de Inteligencia Operativa Enterprise
+            Soluciones especializadas para cada desafío operativo.
           </h2>
           <div className="h-1.5 w-16 bg-[#96C11F] mx-auto rounded-full" />
           <p className="text-slate-300 text-lg font-light leading-relaxed">
-            Plataformas desarrolladas por el Grupo Cibernos que integran IA Generativa de última generación y automatización avanzada para transformar la eficiencia de su back office.
+            Cada solución ha sido diseñada para automatizar procesos críticos, reducir tiempos operativos y aumentar la trazabilidad en entidades financieras.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function EcosystemSection() {
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-[#96C11F]" />
                 <span className="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">
-                  PLATAFORMA B360
+                  Powered by B360
                 </span>
               </div>
               <span className="h-2 w-2 rounded-full bg-[#96C11F] animate-pulse" />
@@ -41,20 +41,20 @@ export default function EcosystemSection() {
 
             <div className="space-y-6">
               <h3 className="font-outfit font-extrabold text-2xl text-white tracking-tight leading-tight group-hover:text-[#96C11F] transition-colors">
-                De la digitación manual a la supervisión inteligente con IA
+                Automatización documental inteligente
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed font-light">
-                Plataforma para el procesamiento masivo de cheques, letras y pagarés. Integra modelos avanzadas de IA Generativa para la lectura y extracción automática de datos en arquitectura Cloud Enterprise, reduciendo la intervención humana a la validación por excepción.
+                Automatice el procesamiento de cheques, letras y documentos financieros mediante IA y validación por excepción, reduciendo la digitación manual y acelerando la operación.
               </p>
 
               {/* Cajas de Métricas Destacadas */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 <div className="bg-slate-900 border border-slate-800 p-4 rounded-sm hover:border-[#074875] transition-colors">
                   <div className="text-2xl font-outfit font-extrabold text-[#96C11F]">
-                    40%
+                    Hasta 40%
                   </div>
                   <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mt-1">
-                    Menos Carga Operativa
+                    menos carga operativa
                   </div>
                 </div>
                 <div className="bg-slate-900 border border-slate-800 p-4 rounded-sm hover:border-[#074875] transition-colors">
@@ -63,7 +63,7 @@ export default function EcosystemSection() {
                     Cloud Active
                   </div>
                   <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mt-1">
-                    Escalabilidad Cloud en Paralelo
+                    Arquitectura cloud preparada para crecer con su operación.
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function EcosystemSection() {
                 href="/servicios/gestion-documental"
                 className="text-sm font-bold text-[#96C11F] hover:text-white hover:underline transition-colors flex items-center gap-1 group-hover:translate-x-1 duration-300"
               >
-                Ver solución B360 en BPO Documental <ChevronRight className="w-4 h-4" />
+                Conocer solución <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function EcosystemSection() {
               <div className="flex items-center gap-2">
                 <Database className="w-4 h-4 text-blue-400" />
                 <span className="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">
-                  CONCILIA PRO
+                  Powered by CONCILIA PRO
                 </span>
               </div>
               <span className="h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
@@ -95,20 +95,20 @@ export default function EcosystemSection() {
 
             <div className="space-y-6">
               <h3 className="font-outfit font-extrabold text-2xl text-white tracking-tight leading-tight group-hover:text-blue-400 transition-colors">
-                Inteligencia Operacional para Conciliaciones Masivas
+                Conciliaciones financieras automatizadas
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed font-light">
-                Motor de cuadre financiero que automatiza la validación, normalización y matching de efectivo, valores y fondos, eliminando reprocesos y asegurando trazabilidad completa ante auditorías.
+                Automatice conciliaciones masivas, elimine reprocesos y obtenga trazabilidad completa para auditorías mediante reglas inteligentes y matching automático.
               </p>
 
               {/* Cajas de Métricas Destacadas */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 <div className="bg-slate-900 border border-slate-800 p-4 rounded-sm hover:border-[#074875] transition-colors">
                   <div className="text-2xl font-outfit font-extrabold text-blue-400">
-                    87%
+                    Hasta 87%
                   </div>
                   <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mt-1">
-                    Menos Tiempo de Ciclo
+                    menos tiempo de ciclo
                   </div>
                 </div>
                 <div className="bg-slate-900 border border-slate-850 p-4 rounded-sm flex items-center justify-center border-dashed border-slate-800">
@@ -125,7 +125,7 @@ export default function EcosystemSection() {
                 href="/servicios/gestion-documental"
                 className="text-sm font-bold text-blue-400 hover:text-white hover:underline transition-colors flex items-center gap-1 group-hover:translate-x-1 duration-300"
               >
-                Ver caso de conciliación <ChevronRight className="w-4 h-4" />
+                Conocer solución <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
