@@ -20,7 +20,11 @@ import {
   Layers,
   ArrowRight,
   Play,
-  Check
+  Check,
+  Cpu,
+  Zap,
+  FolderOpen,
+  UserCheck
 } from "lucide-react";
 
 export const metadata = {
@@ -33,15 +37,22 @@ export default function GestionDocumental() {
     <div className="flex flex-col min-h-screen bg-slate-50">
       
       {/* HERO SECTION */}
-      <section className="bg-slate-950 text-white pt-32 pb-20 relative overflow-hidden grid-pattern-dark border-b border-slate-900">
-        {/* Subtle glow layers */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950/80 pointer-events-none" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#074875]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative min-h-[85vh] flex items-center bg-slate-950 border-b border-slate-900 overflow-hidden py-16 md:py-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/gestiondocumentalhero.jpg"
+            alt="Gestión Documental Hero"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Overlay translúcido del 50% */}
+          <div className="absolute inset-0 bg-slate-950/60" />
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           
           {/* Breadcrumb */}
-          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400 font-mono mb-8 uppercase tracking-wider">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-300 font-mono mb-8 uppercase tracking-wider">
             <Link href="/" className="hover:text-white transition-colors">
               Inicio
             </Link>
@@ -55,132 +66,47 @@ export default function GestionDocumental() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
-                TECNOLOGÍA APLICADA AL NEGOCIO
-              </div>
-              <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
-                Gestión Documental Inteligente
-              </h1>
-              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-light">
-                Transforme procesos documentales críticos en flujos digitales más rápidos, seguros y trazables mediante automatización inteligente.
-              </p>
-              
-              {/* Buttons */}
-              <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contacto"
-                  className="inline-block text-center px-8 py-4 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift shadow-lg shadow-[#96C11F]/10"
-                >
-                  Solicitar demostración
-                </Link>
-                <a
-                  href="#video-section"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-slate-700 bg-slate-900/50 hover:bg-slate-900 text-white font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
-                >
-                  <Play className="w-4 h-4 text-[#96C11F]" />
-                  Ver video
-                </a>
-              </div>
+          <div className="max-w-3xl space-y-6 text-left">
+            <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
+              TECNOLOGÍA APLICADA AL NEGOCIO
+            </div>
+            <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
+              Gestión Documental Inteligente
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-light max-w-2xl">
+              Transforme procesos documentales críticos en flujos digitales más rápidos, seguros y trazables mediante automatización inteligente.
+            </p>
+            
+            {/* Buttons */}
+            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contacto"
+                className="inline-block text-center px-8 py-4 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift shadow-lg shadow-[#96C11F]/10"
+              >
+                Solicitar demostración
+              </Link>
+              <a
+                href="#video-section"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 bg-white/5 hover:bg-white/10 text-white font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
+              >
+                <Play className="w-4 h-4 text-[#96C11F]" />
+                Ver video
+              </a>
             </div>
 
-            {/* Right Illustration Column (Interactive CSS Dashboard) */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative bg-slate-900/90 border border-slate-800 rounded-sm p-6 shadow-2xl backdrop-blur-sm space-y-6">
-                
-                {/* Simulated window header */}
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#96C11F]/80" />
-                  </div>
-                  <span className="font-mono text-[10px] text-slate-500 tracking-wider">
-                    OPERATIONAL DASHBOARD
-                  </span>
-                </div>
-
-                {/* Workflow Visualization */}
-                <div className="space-y-4">
-                  
-                  {/* Step 1: Input */}
-                  <div className="flex items-center justify-between bg-slate-950/60 border border-slate-850 p-3 rounded-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-[#074875]/20 rounded text-[#074875]">
-                        <FileText className="w-5 h-5 text-[#96C11F]" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-slate-300 font-bold">Entrada de Documentos</div>
-                        <div className="text-[10px] text-slate-500">PDF, Imágenes, Cheques, Letras</div>
-                      </div>
-                    </div>
-                    <span className="text-[9px] uppercase tracking-wider text-[#96C11F] bg-[#96C11F]/10 px-2 py-0.5 rounded font-mono font-bold animate-pulse">
-                      Captura
-                    </span>
-                  </div>
-
-                  {/* Connector Arrow */}
-                  <div className="flex justify-center -my-2">
-                    <div className="h-4 border-l border-dashed border-slate-700" />
-                  </div>
-
-                  {/* Step 2: Processing Engine */}
-                  <div className="flex items-center justify-between bg-slate-950/60 border border-slate-850 p-3 rounded-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-[#074875]/20 rounded text-blue-400">
-                        <Workflow className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-slate-300 font-bold">Motor de Extracción</div>
-                        <div className="text-[10px] text-slate-500">Estructuración inteligente de campos</div>
-                      </div>
-                    </div>
-                    <span className="text-[9px] uppercase tracking-wider text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded font-mono font-bold">
-                      Lectura
-                    </span>
-                  </div>
-
-                  {/* Connector Arrow */}
-                  <div className="flex justify-center -my-2">
-                    <div className="h-4 border-l border-dashed border-slate-700" />
-                  </div>
-
-                  {/* Step 3: Result */}
-                  <div className="flex items-center justify-between bg-slate-950/60 border border-slate-850 p-3 rounded-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-[#96C11F]/10 rounded text-[#96C11F]">
-                        <Database className="w-5 h-5 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-slate-300 font-bold">Validación & Registro</div>
-                        <div className="text-[10px] text-slate-500">Integración directa en Core B2B</div>
-                      </div>
-                    </div>
-                    <span className="text-[9px] uppercase tracking-wider text-[#96C11F] bg-[#96C11F]/15 px-2 py-0.5 rounded font-mono font-bold">
-                      Listo
-                    </span>
-                  </div>
-
-                </div>
-
-                {/* Simulated Metrics Footer */}
-                <div className="grid grid-cols-2 gap-4 pt-3 border-t border-slate-800 text-center">
-                  <div className="bg-slate-950/40 p-2 rounded-sm border border-slate-850">
-                    <div className="text-xs text-slate-500 uppercase tracking-widest font-mono">Tasa de Precisión</div>
-                    <div className="text-sm font-extrabold text-[#96C11F] font-mono mt-0.5">99.8%</div>
-                  </div>
-                  <div className="bg-slate-950/40 p-2 rounded-sm border border-slate-850">
-                    <div className="text-xs text-slate-500 uppercase tracking-widest font-mono">Estado Sistema</div>
-                    <div className="text-sm font-extrabold text-blue-400 font-mono mt-0.5">ONLINE</div>
-                  </div>
-                </div>
-
-              </div>
+            {/* Badges */}
+            <div className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-slate-300 text-xs sm:text-sm font-light">
+              <span className="flex items-center gap-1.5">
+                <span className="text-[#96C11F] font-bold">✓</span> Reduce tareas manuales
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-[#96C11F] font-bold">✓</span> Mayor trazabilidad
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-[#96C11F] font-bold">✓</span> Implementación consultiva
+              </span>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -201,11 +127,11 @@ export default function GestionDocumental() {
             </p>
           </div>
 
-          {/* Grid de 6 Tarjetas */}
+          {/* Grid de 6 Tarjetas con Microinteracciones */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Card 1 */}
-            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-red-500/10 rounded-sm flex items-center justify-center text-red-600">
                   <Keyboard className="w-6 h-6" />
@@ -218,7 +144,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-red-500/10 rounded-sm flex items-center justify-center text-red-600">
                   <AlertTriangle className="w-6 h-6" />
@@ -231,7 +157,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-red-500/10 rounded-sm flex items-center justify-center text-red-600">
                   <Clock className="w-6 h-6" />
@@ -244,7 +170,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 4 */}
-            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-red-500/10 rounded-sm flex items-center justify-center text-red-600">
                   <EyeOff className="w-6 h-6" />
@@ -257,7 +183,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 5 */}
-            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-red-500/10 rounded-sm flex items-center justify-center text-red-600">
                   <UserX className="w-6 h-6" />
@@ -270,7 +196,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 6 */}
-            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-red-500/10 rounded-sm flex items-center justify-center text-red-600">
                   <TrendingDown className="w-6 h-6" />
@@ -287,7 +213,7 @@ export default function GestionDocumental() {
         </div>
       </section>
 
-      {/* SECCIÓN 2: ASÍ TRANSFORMAMOS EL PROCESO (ANTES vs DESPUÉS) */}
+      {/* SECCIÓN 2: ASÍ TRANSFORMAMOS EL PROCESO (ANTES vs DESPUÉS) - REDISEÑADO */}
       <section className="py-20 bg-slate-100/50 border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -301,137 +227,117 @@ export default function GestionDocumental() {
             <div className="h-1.5 w-16 bg-[#96C11F] mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+          <div className="space-y-16">
             
-            {/* ANTES (Operación Tradicional) */}
-            <div className="bg-white border border-slate-200 rounded-sm p-8 shadow-sm relative overflow-hidden flex flex-col justify-between">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-red-500/80" />
-              <div>
-                <h3 className="font-outfit font-extrabold text-2xl text-slate-800 mb-6 uppercase tracking-wider flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                  Operación Tradicional
+            {/* ANTES: Proceso Tradicional */}
+            <div className="bg-white border border-slate-200/80 rounded-sm p-8 shadow-sm">
+              <div className="flex items-center gap-2 mb-8">
+                <span className="h-3 w-3 rounded-full bg-red-500" />
+                <h3 className="font-outfit font-extrabold text-lg text-slate-800 uppercase tracking-wider">
+                  Proceso Tradicional (Lento y manual)
                 </h3>
-                <div className="space-y-4">
-                  
-                  {/* Step 1 */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-mono text-xs font-bold shrink-0">1</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-slate-800">Documento</div>
-                      <div className="text-xs text-slate-400">Recepción física o digital desordenada</div>
-                    </div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 relative">
+                {/* Step 1 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
+                    <FileText className="w-6 h-6" />
                   </div>
-                  <div className="h-6 border-l border-dashed border-red-300 ml-4" />
-
-                  {/* Step 2 */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-mono text-xs font-bold shrink-0">2</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-slate-800">Digitación manual</div>
-                      <div className="text-xs text-slate-400">Lectura e ingreso manual campo por campo</div>
-                    </div>
+                  <span className="text-sm font-bold text-slate-800">1. Documento</span>
+                  <span className="text-xs text-slate-500 mt-1 font-light">Recepción manual</span>
+                </div>
+                {/* Step 2 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
+                    <Keyboard className="w-6 h-6" />
                   </div>
-                  <div className="h-6 border-l border-dashed border-red-300 ml-4" />
-
-                  {/* Step 3 */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-mono text-xs font-bold shrink-0">3</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-slate-800">Validación</div>
-                      <div className="text-xs text-slate-400">Verificación humana visual de firmas y montos</div>
-                    </div>
+                  <span className="text-sm font-bold text-slate-800">2. Digitación</span>
+                  <span className="text-xs text-slate-500 mt-1 font-light">Ingreso de datos</span>
+                </div>
+                {/* Step 3 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
+                    <AlertTriangle className="w-6 h-6" />
                   </div>
-                  <div className="h-6 border-l border-dashed border-red-300 ml-4" />
-
-                  {/* Step 4 */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-mono text-xs font-bold shrink-0">4</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-slate-800">Registro</div>
-                      <div className="text-xs text-slate-400">Carga e inserción manual en bases de datos</div>
-                    </div>
+                  <span className="text-sm font-bold text-slate-800">3. Validación</span>
+                  <span className="text-xs text-slate-500 mt-1 font-light">Revisión visual</span>
+                </div>
+                {/* Step 4 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
+                    <Database className="w-6 h-6" />
                   </div>
-                  <div className="h-6 border-l border-dashed border-red-300 ml-4" />
-
-                  {/* Step 5 */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600 font-mono text-xs font-bold shrink-0">5</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-slate-800">Archivo</div>
-                      <div className="text-xs text-slate-400">Almacenamiento local aislado o físico</div>
-                    </div>
+                  <span className="text-sm font-bold text-slate-800">4. Registro</span>
+                  <span className="text-xs text-slate-500 mt-1 font-light">Carga manual</span>
+                </div>
+                {/* Step 5 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3">
+                    <Layers className="w-6 h-6" />
                   </div>
-
+                  <span className="text-sm font-bold text-slate-800">5. Archivo</span>
+                  <span className="text-xs text-slate-500 mt-1 font-light">Almacén físico</span>
                 </div>
               </div>
             </div>
 
-            {/* DESPUÉS (Flujo Inteligente) */}
-            <div className="bg-slate-900 border border-slate-850 rounded-sm p-8 shadow-xl text-white relative overflow-hidden flex flex-col justify-between">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-[#96C11F]" />
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#074875]/5 rounded-full blur-3xl" />
-              
-              <div>
-                <h3 className="font-outfit font-extrabold text-2xl text-white mb-6 uppercase tracking-wider flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#96C11F] animate-pulse" />
-                  Solución Inteligente
+            {/* DESPUÉS: Solución Inteligente */}
+            <div className="bg-slate-900 text-white border border-slate-800 rounded-sm p-8 shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[#074875]/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="flex items-center gap-2 mb-8 relative z-10">
+                <span className="h-3 w-3 rounded-full bg-[#96C11F] animate-pulse" />
+                <h3 className="font-outfit font-extrabold text-lg text-[#96C11F] uppercase tracking-wider">
+                  Solución Inteligente (Automatizado y controlado)
                 </h3>
-                <div className="space-y-3">
-                  
-                  {/* Step 1 */}
-                  <div className="flex items-center gap-4 bg-slate-950/40 p-2.5 border border-slate-800/80 rounded-sm">
-                    <div className="w-8 h-8 rounded-full bg-[#074875]/20 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center font-mono text-xs font-bold shrink-0">1</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-white">Documento</div>
-                      <div className="text-xs text-slate-400">Entrada multicanal digital automática</div>
-                    </div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-6 relative z-10">
+                {/* Step 1 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
+                    <FileText className="w-6 h-6" />
                   </div>
-
-                  {/* Step 2 */}
-                  <div className="flex items-center gap-4 bg-slate-950/40 p-2.5 border border-slate-800/80 rounded-sm">
-                    <div className="w-8 h-8 rounded-full bg-[#074875]/20 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center font-mono text-xs font-bold shrink-0">2</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-white">Lectura inteligente</div>
-                      <div className="text-xs text-slate-400">Clasificación automatizada mediante reglas</div>
-                    </div>
+                  <span className="text-sm font-bold text-white">1. Documento</span>
+                  <span className="text-xs text-slate-400 mt-1 font-light">Entrada digital</span>
+                </div>
+                {/* Step 2 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
+                    <Workflow className="w-6 h-6" />
                   </div>
-
-                  {/* Step 3 */}
-                  <div className="flex items-center gap-4 bg-slate-950/40 p-2.5 border border-slate-800/80 rounded-sm">
-                    <div className="w-8 h-8 rounded-full bg-[#074875]/20 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center font-mono text-xs font-bold shrink-0">3</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-white">Extracción automática</div>
-                      <div className="text-xs text-slate-400">Captura de campos clave con precisión de 99.8%</div>
-                    </div>
+                  <span className="text-sm font-bold text-white">2. Lectura</span>
+                  <span className="text-xs text-slate-400 mt-1 font-light">Clasificación IA</span>
+                </div>
+                {/* Step 3 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
+                    <Cpu className="w-6 h-6" />
                   </div>
-
-                  {/* Step 4 */}
-                  <div className="flex items-center gap-4 bg-slate-950/40 p-2.5 border border-slate-800/80 rounded-sm">
-                    <div className="w-8 h-8 rounded-full bg-[#074875]/20 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center font-mono text-xs font-bold shrink-0">4</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-white">Validación asistida</div>
-                      <div className="text-xs text-slate-400">Derivación por excepción ante firmas o datos dudosos</div>
-                    </div>
+                  <span className="text-sm font-bold text-white">3. Extracción</span>
+                  <span className="text-xs text-slate-400 mt-1 font-light">Precisión 99.8%</span>
+                </div>
+                {/* Step 4 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
+                    <UserCheck className="w-6 h-6" />
                   </div>
-
-                  {/* Step 5 */}
-                  <div className="flex items-center gap-4 bg-slate-950/40 p-2.5 border border-slate-800/80 rounded-sm">
-                    <div className="w-8 h-8 rounded-full bg-[#074875]/20 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center font-mono text-xs font-bold shrink-0">5</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-white">Registro automático</div>
-                      <div className="text-xs text-slate-400">Inserción directa sin digitadores en Core bancario</div>
-                    </div>
+                  <span className="text-sm font-bold text-white">4. Validación</span>
+                  <span className="text-xs text-slate-400 mt-1 font-light">Asistida por excepción</span>
+                </div>
+                {/* Step 5 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#074875]/30 text-[#96C11F] border border-[#074875]/50 flex items-center justify-center mb-3">
+                    <Zap className="w-6 h-6" />
                   </div>
-
-                  {/* Step 6 */}
-                  <div className="flex items-center gap-4 bg-[#074875]/20 p-2.5 border border-[#96C11F]/30 rounded-sm">
-                    <div className="w-8 h-8 rounded-full bg-[#96C11F]/20 text-[#96C11F] border border-[#96C11F]/40 flex items-center justify-center font-mono text-xs font-bold shrink-0">6</div>
-                    <div>
-                      <div className="text-sm font-extrabold text-[#96C11F]">Trazabilidad completa</div>
-                      <div className="text-xs text-slate-300">Auditoría inalterable del ciclo del lote en tiempo real</div>
-                    </div>
+                  <span className="text-sm font-bold text-white">5. Registro</span>
+                  <span className="text-xs text-slate-400 mt-1 font-light">Directo en Core</span>
+                </div>
+                {/* Step 6 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#96C11F]/20 text-[#96C11F] border border-[#96C11F]/40 flex items-center justify-center mb-3">
+                    <Shield className="w-6 h-6" />
                   </div>
-
+                  <span className="text-sm font-bold text-[#96C11F]">6. Auditoría</span>
+                  <span className="text-xs text-slate-300 mt-1 font-medium">Trazabilidad total</span>
                 </div>
               </div>
             </div>
@@ -458,11 +364,11 @@ export default function GestionDocumental() {
             </p>
           </div>
 
-          {/* Grid de 8 tarjetas */}
+          {/* Grid de 8 tarjetas con microinteracciones (ligera elevación + sombra) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Card 1: Cheques */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <FileText className="w-5 h-5" />
               </div>
@@ -471,7 +377,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 2: Letras */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <Workflow className="w-5 h-5" />
               </div>
@@ -480,7 +386,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 3: Contratos */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <Shield className="w-5 h-5" />
               </div>
@@ -489,7 +395,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 4: Formularios */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <Keyboard className="w-5 h-5" />
               </div>
@@ -498,7 +404,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 5: Expedientes */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <Database className="w-5 h-5" />
               </div>
@@ -507,7 +413,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 6: Facturas */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <Award className="w-5 h-5" />
               </div>
@@ -516,7 +422,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 7: Órdenes de compra */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <Layers className="w-5 h-5" />
               </div>
@@ -525,7 +431,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Card 8: Documentación tributaria */}
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:border-[#96C11F]/30 transition-colors space-y-3">
+            <div className="bg-slate-900 border border-slate-800 p-6 rounded-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-[#074875]/20 hover:border-[#96C11F]/30 transition-all duration-300 space-y-3">
               <div className="w-10 h-10 bg-[#074875]/20 rounded-sm flex items-center justify-center text-[#96C11F]">
                 <Eye className="w-5 h-5" />
               </div>
@@ -555,11 +461,11 @@ export default function GestionDocumental() {
             </p>
           </div>
 
-          {/* Grid de Beneficios (Dashboard style) */}
+          {/* Grid de Beneficios con Microinteracciones (ligera elevación + sombra) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Beneficio 1 */}
-            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-10 h-10 bg-[#074875]/10 rounded-sm flex items-center justify-center text-[#074875]">
                   <Check className="w-5 h-5 text-[#96C11F]" />
@@ -572,7 +478,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Beneficio 2 */}
-            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-10 h-10 bg-[#074875]/10 rounded-sm flex items-center justify-center text-[#074875]">
                   <Check className="w-5 h-5 text-[#96C11F]" />
@@ -585,7 +491,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Beneficio 3 */}
-            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-10 h-10 bg-[#074875]/10 rounded-sm flex items-center justify-center text-[#074875]">
                   <Check className="w-5 h-5 text-[#96C11F]" />
@@ -598,7 +504,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Beneficio 4 */}
-            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-10 h-10 bg-[#074875]/10 rounded-sm flex items-center justify-center text-[#074875]">
                   <Check className="w-5 h-5 text-[#96C11F]" />
@@ -611,7 +517,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Beneficio 5 */}
-            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-10 h-10 bg-[#074875]/10 rounded-sm flex items-center justify-center text-[#074875]">
                   <Check className="w-5 h-5 text-[#96C11F]" />
@@ -624,7 +530,7 @@ export default function GestionDocumental() {
             </div>
 
             {/* Beneficio 6 */}
-            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover-lift flex flex-col justify-between">
+            <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-sm hover:-translate-y-1 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="w-10 h-10 bg-[#074875]/10 rounded-sm flex items-center justify-center text-[#074875]">
                   <Check className="w-5 h-5 text-[#96C11F]" />
@@ -641,7 +547,7 @@ export default function GestionDocumental() {
         </div>
       </section>
 
-      {/* SECCIÓN 5: PLATAFORMA QUE SOPORTA LA SOLUCIÓN */}
+      {/* SECCIÓN 5: PLATAFORMA QUE SOPORTA LA SOLUCIÓN - IMÁGENES REALES Y VISOR */}
       <section className="py-20 bg-slate-900 text-white border-b border-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -658,83 +564,65 @@ export default function GestionDocumental() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Capabilities List */}
-            <div className="lg:col-span-5 space-y-6 text-left">
-              <h3 className="font-outfit font-extrabold text-2xl text-white tracking-tight leading-tight">
-                ¿Qué le permite hacer la plataforma?
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#074875] text-[#96C11F] flex items-center justify-center shrink-0 text-xs font-bold font-mono">1</div>
-                  <div>
-                    <strong className="text-white">Administrar documentos:</strong> Organización estructurada de archivos recibidos.
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#074875] text-[#96C11F] flex items-center justify-center shrink-0 text-xs font-bold font-mono">2</div>
-                  <div>
-                    <strong className="text-white">Gestionar lotes:</strong> Control en bloque de altos volúmenes de expedientes.
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#074875] text-[#96C11F] flex items-center justify-center shrink-0 text-xs font-bold font-mono">3</div>
-                  <div>
-                    <strong className="text-white">Validar información:</strong> Reglas de cruce para verificación de montos y firmas.
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#074875] text-[#96C11F] flex items-center justify-center shrink-0 text-xs font-bold font-mono">4</div>
-                  <div>
-                    <strong className="text-white">Consultar historial:</strong> Búsqueda instantánea de bitácoras de auditoría anteriores.
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#074875] text-[#96C11F] flex items-center justify-center shrink-0 text-xs font-bold font-mono">5</div>
-                  <div>
-                    <strong className="text-white">Controlar estados:</strong> Alertas sobre lotes pendientes o rechazados.
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#074875] text-[#96C11F] flex items-center justify-center shrink-0 text-xs font-bold font-mono">6</div>
-                  <div>
-                    <strong className="text-white">Auditar procesos:</strong> Reportes estructurados para entes reguladores locales.
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            {/* Placeholders for Platform Screenshots */}
-            <div className="lg:col-span-7 relative">
-              <div className="bg-slate-950 border border-slate-800 rounded-sm p-6 shadow-2xl relative overflow-hidden">
-                {/* Platform UI Mockup Header */}
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div className="space-y-12">
+            {/* Visor Elegante de Dos Columnas */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              
+              {/* Visor Left */}
+              <div className="bg-slate-950 border border-slate-800 rounded-sm p-4 shadow-2xl flex flex-col space-y-4 hover:border-[#96C11F]/30 transition-colors duration-300">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-red-500/80" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                    <span className="w-3 h-3 rounded-full bg-[#96C11F]/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#96C11F]/80" />
                   </div>
-                  <span className="text-xs text-slate-400 font-mono">B360 Document Platform v2.4</span>
+                  <span className="font-mono text-[10px] text-slate-500 tracking-wider">B360_CAPTURADOR_DE_LOTES.JPG</span>
                 </div>
-                {/* Platform UI Content Placeholders */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Left: Document representation */}
-                  <div className="border border-dashed border-slate-850 p-4 rounded-sm flex flex-col justify-center items-center h-48 bg-slate-900/20 text-center">
-                    <FileText className="w-10 h-10 text-[#96C11F]/60 mb-2" />
-                    <span className="text-xs text-slate-400 font-mono font-bold">[Captura real de plataforma]</span>
-                    <span className="text-[10px] text-slate-500 mt-1">Lector de Documentos y Cheques</span>
-                  </div>
-                  {/* Right: Extracted fields representation */}
-                  <div className="border border-dashed border-slate-850 p-4 rounded-sm flex flex-col justify-center items-center h-48 bg-slate-900/20 text-center">
-                    <Database className="w-10 h-10 text-blue-400/60 mb-2" />
-                    <span className="text-xs text-slate-400 font-mono font-bold">[Captura real de plataforma]</span>
-                    <span className="text-[10px] text-slate-500 mt-1">Validación de Datos y Estados</span>
-                  </div>
+                <div className="relative aspect-video rounded-sm overflow-hidden bg-slate-950 border border-slate-850">
+                  <img
+                    src="/images/b3601.jpg"
+                    alt="Módulo de Captura B360"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-light mt-2 text-center">
+                  Módulo de Captura Inteligente: Recepción, ordenamiento y clasificación automática de lotes de cheques, pagarés y letras.
+                </p>
               </div>
+
+              {/* Visor Right */}
+              <div className="bg-slate-950 border border-slate-800 rounded-sm p-4 shadow-2xl flex flex-col space-y-4 hover:border-[#96C11F]/30 transition-colors duration-300">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#96C11F]/80" />
+                  </div>
+                  <span className="font-mono text-[10px] text-slate-500 tracking-wider">B360_VALIDADOR_POR_EXCEPCION.JPG</span>
+                </div>
+                <div className="relative aspect-video rounded-sm overflow-hidden bg-slate-950 border border-slate-850">
+                  <img
+                    src="/images/b3602.jpg"
+                    alt="Módulo de Validación B360"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-light mt-2 text-center">
+                  Módulo de Validación Asistida: Revisión ágil por excepción de campos con firma o datos pendientes de confirmación.
+                </p>
+              </div>
+
             </div>
 
+            {/* List of actions inside platform */}
+            <div className="pt-8 border-t border-slate-800 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center text-xs text-slate-400">
+              <span className="px-3 py-2 bg-slate-950/40 rounded-sm border border-slate-850">administrar documentos</span>
+              <span className="px-3 py-2 bg-slate-950/40 rounded-sm border border-slate-850">gestionar lotes</span>
+              <span className="px-3 py-2 bg-slate-950/40 rounded-sm border border-slate-850">validar información</span>
+              <span className="px-3 py-2 bg-slate-950/40 rounded-sm border border-slate-850">consultar historial</span>
+              <span className="px-3 py-2 bg-slate-950/40 rounded-sm border border-slate-850">controlar estados</span>
+              <span className="px-3 py-2 bg-slate-950/40 rounded-sm border border-slate-850">auditar procesos</span>
+            </div>
           </div>
 
         </div>
@@ -760,7 +648,7 @@ export default function GestionDocumental() {
         </div>
       </section>
 
-      {/* SECCIÓN 7: SOLUCIÓN EN FUNCIONAMIENTO (VIDEO PLACEHOLDER) */}
+      {/* SECCIÓN 7: SOLUCIÓN EN FUNCIONAMIENTO (YOUTUBE IFRAME) */}
       <section id="video-section" className="py-20 bg-slate-900 text-white border-b border-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           
@@ -776,25 +664,23 @@ export default function GestionDocumental() {
             </p>
           </div>
 
-          {/* Video Mockup Player */}
-          <div className="max-w-4xl mx-auto bg-slate-950 border border-slate-800 rounded-sm aspect-video flex items-center justify-center relative group cursor-pointer shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#074875]/20 to-[#96C11F]/5 group-hover:opacity-80 transition-opacity" />
-            
-            {/* Play Button Overlay */}
-            <div className="relative z-10 w-20 h-20 bg-[#074875]/90 border border-slate-705 hover:border-[#96C11F] text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg shadow-[#074875]/50">
-              <Play className="w-8 h-8 fill-white ml-1 text-[#96C11F]" />
-            </div>
-
-            {/* Placeholder Text */}
-            <div className="absolute bottom-4 left-4 right-4 text-center text-xs text-slate-500 font-mono">
-              [Espacio preparado para integrar posteriormente el video oficial de YouTube]
+          {/* Video Embebido Youtube */}
+          <div className="max-w-4xl mx-auto bg-slate-950 border border-slate-800 rounded-sm overflow-hidden shadow-2xl relative">
+            <div className="aspect-video w-full h-full">
+              <iframe
+                src="https://www.youtube.com/embed/wcutMg25PLo"
+                title="Gestión Documental Inteligente - Finanservy"
+                className="w-full h-full border-none"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* SECCIÓN 8: PREGUNTAS FRECUENTES (ACCORDION) */}
+      {/* SECCIÓN 8: PREGUNTAS FRECUENTES (ACCORDION - CORREGIDO/ACORTADO) */}
       <section className="py-20 bg-white border-b border-slate-200/60">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -819,7 +705,7 @@ export default function GestionDocumental() {
                 <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300 shrink-0" />
               </summary>
               <div className="mt-3 text-sm text-slate-500 leading-relaxed font-light">
-                La plataforma está diseñada para capturar y procesar todo tipo de documentos críticos del negocio financiero y empresarial, incluyendo cheques, letras de cambio, pagarés, contratos de crédito, formularios de afiliación, expedientes de clientes, facturas, órdenes de compra y documentación tributaria.
+                Procesa cheques, letras de cambio, pagarés, contratos, expedientes de crédito, formularios de afiliación, facturas y documentación tributaria.
               </div>
             </details>
 
@@ -831,7 +717,7 @@ export default function GestionDocumental() {
                 <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300 shrink-0" />
               </summary>
               <div className="mt-3 text-sm text-slate-500 leading-relaxed font-light">
-                Sí. Se integra de manera segura y transparente con sistemas legados, ERPs corporativos y el Core transaccional del banco mediante APIs de alta velocidad y colas de mensajería seguras, automatizando el registro final de datos.
+                Sí. Se conecta de forma segura con sistemas legados, ERPs corporativos y el Core bancario a través de APIs y servicios de mensajería.
               </div>
             </details>
 
@@ -843,7 +729,7 @@ export default function GestionDocumental() {
                 <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300 shrink-0" />
               </summary>
               <div className="mt-3 text-sm text-slate-500 leading-relaxed font-light">
-                Utilizamos reglas de negocio avanzadas y validación cruzada automatizada. Cuando el sistema detecta alguna inconsistencia o documento ilegible, este se deriva automáticamente a una cola de validación asistida por excepción para que un especialista valide el dato específico, garantizando cero errores en el Core.
+                Mediante un motor de reglas que valida los datos automáticamente. Cualquier inconsistencia o duda se deriva a una cola de validación asistida por excepción.
               </div>
             </details>
 
@@ -855,7 +741,7 @@ export default function GestionDocumental() {
                 <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300 shrink-0" />
               </summary>
               <div className="mt-3 text-sm text-slate-500 leading-relaxed font-light">
-                La implementación sigue una metodología ágil y consultiva. Iniciamos con un diagnóstico inicial de sus procesos operativos, configuramos el motor de reglas y la plataforma en ambientes de prueba, realizamos integraciones con sus sistemas y finalmente desplegamos a producción con soporte continuo.
+                A través de una metodología consultiva que incluye diagnóstico inicial, configuración de reglas, pruebas de integración y despliegue con soporte continuo.
               </div>
             </details>
 
@@ -867,7 +753,7 @@ export default function GestionDocumental() {
                 <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300 shrink-0" />
               </summary>
               <div className="mt-3 text-sm text-slate-500 leading-relaxed font-light">
-                Aunque está especialmente optimizada para las necesidades de alta criticidad, seguridad y compliance del sector financiero (banca, seguros, cooperativas y fintech), cualquier organización con una alta carga documental en sus operaciones puede beneficiarse de esta automatización.
+                Está optimizada para banca, seguros, cooperativas y fintech, pero es aplicable a cualquier industria con alta carga operativa documental.
               </div>
             </details>
 
@@ -879,7 +765,7 @@ export default function GestionDocumental() {
                 <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300 shrink-0" />
               </summary>
               <div className="mt-3 text-sm text-slate-500 leading-relaxed font-light">
-                Cada documento procesado genera una bitácora de auditoría inalterable. La plataforma registra quién procesó, cuándo se validó y cada cambio de estado del documento, facilitando reportes en tiempo real listos para auditorías internas y regulatorias.
+                Registrando una bitácora inalterable con cada cambio de estado, hora y usuario, facilitando auditorías regulatorias en tiempo real.
               </div>
             </details>
 
@@ -891,7 +777,7 @@ export default function GestionDocumental() {
                 <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300 shrink-0" />
               </summary>
               <div className="mt-3 text-sm text-slate-500 leading-relaxed font-light">
-                Puede solicitar una demostración personalizada haciendo clic en el botón 'Solicitar demostración' o completando el formulario en nuestra sección de Contacto. Un especialista operativo se comunicará para coordinar la sesión.
+                Haga clic en 'Solicitar demostración' o contáctenos mediante el formulario. Un especialista agendará una sesión adaptada a su proceso.
               </div>
             </details>
 
@@ -900,14 +786,14 @@ export default function GestionDocumental() {
         </div>
       </section>
 
-      {/* CTA FINAL (Home-matched style) */}
+      {/* CTA FINAL (Corregido 'operación') */}
       <section className="py-20 bg-slate-900 border-t border-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-slate-900 via-[#074875] to-slate-900 text-white rounded-md p-10 md:p-14 text-center space-y-6 relative overflow-hidden shadow-2xl border border-blue-800/30">
             <div className="absolute inset-0 bg-grid-pattern-dark opacity-10 pointer-events-none" />
             <div className="relative z-10 space-y-4 max-w-3xl mx-auto">
               <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
-                Descubra cómo transformar su operation documental.
+                Descubra cómo transformar su operación documental.
               </h2>
               <p className="text-base sm:text-lg text-slate-200 font-light leading-relaxed max-w-2xl mx-auto">
                 Converse con nuestros especialistas y conozca cómo automatizar sus procesos documentales.
