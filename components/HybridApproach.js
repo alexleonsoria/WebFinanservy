@@ -10,7 +10,7 @@ export default function HybridApproach() {
         {/* Columna Izquierda (Elemento Visual 50%) */}
         <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900">
           <Image
-            src="/images/hybrid-approach.jpg"
+            src="/images/centro_operaciones.jpg"
             alt="Enfoque Híbrido de BPO y Automatización"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -23,11 +23,14 @@ export default function HybridApproach() {
         <div className="space-y-6 text-left">
           <div>
             <span className="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full inline-block mb-3 border border-blue-100">
-              NUESTRA VENTAJA COMPETITIVA
+              NUESTRA DIFERENCIA
             </span>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 font-outfit">
-              El Enfoque Híbrido: Hablamos tu mismo idioma
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 font-outfit">
+              La tecnología es nuestra herramienta. El conocimiento del negocio financiero es nuestro verdadero diferencial.
             </h2>
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl font-light mb-6">
+              No implementamos tecnología por tendencia. Diseñamos procesos que reducen riesgos, optimizan la operación y generan resultados medibles para su negocio.
+            </p>
           </div>
 
           {/* 3 Tarjetas Flotantes de Contenido Limpio */}
@@ -36,30 +39,30 @@ export default function HybridApproach() {
             {/* Tarjeta 1 */}
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all">
               <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
-                01. Escalabilidad
+                01. Conocimiento del negocio financiero
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Absorbemos volumen masivo mediante automatización e IA, el talento humano se suma únicamente donde aporta valor estratégico.
+                Diseñamos procesos alineados a la realidad operativa de bancos, aseguradoras y entidades financieras.
               </p>
             </div>
 
             {/* Tarjeta 2 */}
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all">
               <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
-                02. Operación Transparente
+                02. Tecnología aplicada con propósito
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Visibilidad y trazabilidad en tiempo real de toda tu operación con tableros de mando (BI) y control estricto de SLAs.
+                Automatizamos únicamente donde genera mayor impacto, mejorando eficiencia, trazabilidad y control.
               </p>
             </div>
 
             {/* Tarjeta 3 */}
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:border-blue-200 transition-all">
               <h3 className="font-bold text-slate-900 text-lg mb-1 font-outfit">
-                03. Soluciones propias
+                03. Operaciones listas para crecer
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Plataformas de software (B360, CONCILIA PRO, Tech2Call) respaldadas por expertos que entienden el negocio y la normativa local.
+                Combinamos talento especializado, metodologías y plataformas propias para escalar su operación sin perder calidad ni cumplimiento.
               </p>
             </div>
 
