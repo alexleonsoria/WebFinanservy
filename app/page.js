@@ -66,7 +66,7 @@ export default function Home() {
             {/* Overlay translúcido del 50% */}
             <div className="absolute inset-0 bg-slate-950/50 z-10" />
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 md:translate-x-10 md:translate-y-10">
               <div className="max-w-3xl space-y-6 text-left">
                 
                 {/* Tag Superior */}
@@ -114,7 +114,7 @@ export default function Home() {
 
         {/* Indicadores de Posición Inferiores */}
         <div className="absolute bottom-8 left-0 right-0 z-30">
-          <div className="max-w-7xl mx-auto px-4 flex justify-center md:justify-start">
+          <div className="max-w-7xl mx-auto px-4 flex justify-center md:justify-start md:translate-x-10">
             <div className="flex items-center gap-2">
               {slides.map((_, index) => (
                 <button
@@ -133,17 +133,17 @@ export default function Home() {
         {/* Flechas de Navegación Flotantes Circulares */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-white hover:bg-[#074875] hover:border-[#074875] flex items-center justify-center transition-all shadow-lg cursor-pointer"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-9 md:h-9 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white/60 hover:text-white hover:bg-white/15 hover:border-white/25 flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer"
           aria-label="Diapositiva anterior"
         >
-          <span className="text-xl">←</span>
+          <span className="text-sm md:text-base">←</span>
         </button>
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-white hover:bg-[#074875] hover:border-[#074875] flex items-center justify-center transition-all shadow-lg cursor-pointer"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 md:w-9 md:h-9 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white/60 hover:text-white hover:bg-white/15 hover:border-white/25 flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer"
           aria-label="Siguiente diapositiva"
         >
-          <span className="text-xl">→</span>
+          <span className="text-sm md:text-base">→</span>
         </button>
       </section>
 
