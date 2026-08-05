@@ -117,9 +117,9 @@ export default function Navbar() {
             </span>
             <div className="absolute top-full left-0 mt-2 w-64 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-sm shadow-xl opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50 p-2">
               <div className="flex flex-col gap-1">
-                <span className="px-3 py-2 text-sm text-slate-400 font-medium hover:bg-slate-800/40 rounded-sm cursor-not-allowed opacity-50 flex items-center justify-between">
-                  Banca <span className="text-[9px] uppercase tracking-wider text-blue-400 bg-blue-400/10 px-1.5 py-0.5 rounded font-mono font-bold">Próximamente</span>
-                </span>
+                <Link href="/sectores/banca" className="px-3 py-2 text-sm text-slate-300 hover:text-[#96C11F] font-medium hover:bg-slate-800 rounded-sm transition-colors flex items-center justify-between">
+                  Banca
+                </Link>
                 <span className="px-3 py-2 text-sm text-slate-400 font-medium hover:bg-slate-800/40 rounded-sm cursor-not-allowed opacity-50 flex items-center justify-between">
                   Seguros <span className="text-[9px] uppercase tracking-wider text-blue-400 bg-blue-400/10 px-1.5 py-0.5 rounded font-mono font-bold">Próximamente</span>
                 </span>
@@ -266,7 +266,13 @@ export default function Navbar() {
             </div>
             <div className={`overflow-hidden transition-all duration-300 ${isMobileSectoresOpen ? "max-h-48 mt-2 pl-4 border-l border-slate-700/30" : "max-h-0 opacity-0 pointer-events-none"}`}>
               <div className="flex flex-col gap-2.5 pb-2 pt-1">
-                <span className="text-sm text-slate-400 font-medium opacity-60">Banca</span>
+                <Link
+                  href="/sectores/banca"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm text-slate-300 font-medium hover:text-white transition-colors"
+                >
+                  Banca
+                </Link>
                 <span className="text-sm text-slate-400 font-medium opacity-60">Seguros</span>
                 <span className="text-sm text-slate-400 font-medium opacity-60">Cooperativas</span>
                 <span className="text-sm text-slate-400 font-medium opacity-60">Fintech</span>
