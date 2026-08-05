@@ -1,3 +1,5 @@
+import ServiceHero from "@/components/ServiceHero";
+
 export const metadata = {
   title: "Servicios BPO | Soluciones de Externalización en Ecuador",
   description: "Explore nuestro portafolio de servicios BPO de Gestión Documental, Procesos Administrativos, CAUs Operativos y Cumplimiento de Proveedores.",
@@ -40,20 +42,17 @@ const serviceCards = [
 
 export default function Servicios() {
   return (
-    <div className="py-16 md:py-24 space-y-16 bg-slate-50">
+    <div className="space-y-16 bg-slate-50 pb-16 md:pb-24">
       {/* Cabecera */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Portafolio de Soluciones BPO
-        </div>
-        <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-          Nuestros Servicios Operativos
-        </h1>
-        <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">
-          Alineamos software corporativo de vanguardia y equipos especializados para procesar altos volúmenes transaccionales con total cumplimiento.
-        </p>
-      </section>
+      <ServiceHero
+        tagCategory="Portafolio de Soluciones BPO"
+        title="Nuestros Servicios Operativos"
+        subtitle="Alineamos software corporativo de vanguardia y equipos especializados para procesar altos volúmenes transaccionales con total cumplimiento."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Soluciones" }
+        ]}
+      />
 
       {/* Grilla de Servicios */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -15,6 +15,11 @@ export default function ProcesosAdministrativos() {
         tagConsole="SYS_FIN_ACTIVE"
         title="Procesos Administrativos y Financieros"
         subtitle="Optimizamos la gestión administrativa del back office de su empresa bajo estrictos estándares normativos y fiscales."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Soluciones", link: "/servicios" },
+          { name: "Procesos Administrativos" }
+        ]}
       />
 
       {/* Áreas Operativas */}

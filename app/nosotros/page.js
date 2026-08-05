@@ -1,3 +1,5 @@
+import ServiceHero from "@/components/ServiceHero";
+
 export const metadata = {
   title: "Nosotros | Grupo Cibernos y Finanservy",
   description: "Más de 50 años de trayectoria garantizando la continuidad de negocio y seguridad de la información mediante certificaciones auditadas.",
@@ -5,20 +7,17 @@ export const metadata = {
 
 export default function Nosotros() {
   return (
-    <div className="py-16 md:py-24 space-y-20 bg-slate-50">
+    <div className="space-y-20 bg-slate-50 pb-16 md:pb-24">
       {/* Hero Sección */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Respaldo y Solidez Institucional
-        </div>
-        <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
-          Más de 50 Años de Trayectoria y Respaldo Global
-        </h1>
-        <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">
-          Validamos la solidez de su operación frente a comités de compras y auditoría gracias a nuestra gobernanza y certificaciones internacionales.
-        </p>
-      </section>
+      <ServiceHero
+        tagCategory="Respaldo y Solidez Institucional"
+        title="Más de 50 Años de Trayectoria y Respaldo Global"
+        subtitle="Validamos la solidez de su operación frente a comités de compras y auditoría gracias a nuestra gobernanza y certificaciones internacionales."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Nosotros" }
+        ]}
+      />
 
       {/* Historia y Trayectoria */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

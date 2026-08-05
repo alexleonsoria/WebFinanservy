@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ServiceHero from "@/components/ServiceHero";
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -20,7 +21,16 @@ export default function Contacto() {
   };
 
   return (
-    <div className="py-16 md:py-24 bg-slate-50">
+    <div className="space-y-16 bg-slate-50 pb-16 md:pb-24">
+      <ServiceHero
+        tagCategory="Contacto B2B"
+        title="Hablemos de su proyecto"
+        subtitle="Escríbanos o llámenos para coordinar un diagnóstico inicial de sus procesos de BPO y operaciones."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Contacto" }
+        ]}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           

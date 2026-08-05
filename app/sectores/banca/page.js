@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServiceHero from "@/components/ServiceHero";
 import {
   ChevronRight,
   ChevronDown,
@@ -168,65 +169,33 @@ export default function BancaSectorPage() {
       `}} />
 
       {/* HERO SECTION */}
-      <section className="relative min-h-[75vh] flex items-center bg-slate-950 border-b border-slate-900 overflow-hidden py-16 md:py-24">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/sector-banca-hero.jpg"
-            alt="Soluciones Especializadas para Banca"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Overlay translúcido del 60% */}
-          <div className="absolute inset-0 bg-slate-950/60" />
+      <ServiceHero
+        backgroundImage="/images/sector-banca-hero.jpg"
+        tagCategory="SECTOR FINANCIERO"
+        title="Soluciones especializadas para banca"
+        subtitle="Ayudamos a bancos y entidades financieras a optimizar procesos críticos, mejorar la eficiencia operativa y fortalecer la trazabilidad mediante BPO especializado y automatización inteligente."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Sectores" },
+          { name: "Banca" }
+        ]}
+      >
+        {/* Buttons */}
+        <div className="pt-4 flex flex-col sm:flex-row gap-4">
+          <Link
+            href="/contacto"
+            className="inline-block text-center px-8 py-4 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift shadow-lg shadow-[#96C11F]/10"
+          >
+            Hablemos de su proyecto
+          </Link>
+          <a
+            href="#soluciones-seccion"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 bg-white/5 hover:bg-white/10 text-white font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
+          >
+            Conocer soluciones
+          </a>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-          <div className="max-w-3xl space-y-6 text-left animate-fade-in-up">
-            
-            {/* Breadcrumb */}
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-300 font-mono uppercase tracking-wider">
-              <Link href="/" className="hover:text-white transition-colors">
-                Inicio
-              </Link>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <span className="text-slate-400">Sectores</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <span className="text-[#96C11F] font-semibold">Banca</span>
-            </div>
-
-            {/* Tag Label */}
-            <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
-              SECTOR FINANCIERO
-            </div>
-
-            {/* Main Heading */}
-            <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
-              Soluciones especializadas para banca
-            </h1>
-
-            {/* Subheading */}
-            <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-light max-w-2xl">
-              Ayudamos a bancos y entidades financieras a optimizar procesos críticos, mejorar la eficiencia operativa y fortalecer la trazabilidad mediante BPO especializado y automatización inteligente.
-            </p>
-            
-            {/* Buttons */}
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contacto"
-                className="inline-block text-center px-8 py-4 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift shadow-lg shadow-[#96C11F]/10"
-              >
-                Hablemos de su proyecto
-              </Link>
-              <a
-                href="#soluciones-seccion"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 bg-white/5 hover:bg-white/10 text-white font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
-              >
-                Conocer soluciones
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      </ServiceHero>
 
       {/* SECCIÓN 1: LOS DESAFÍOS DE LA BANCA */}
       <section className="py-20 bg-white border-b border-slate-200/60">

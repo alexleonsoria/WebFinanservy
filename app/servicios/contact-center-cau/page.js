@@ -15,6 +15,11 @@ export default function ContactCenterCau() {
         tagConsole="SYS_CX_ACTIVE"
         title="Contact Center y CAUs Operativos"
         subtitle="Interconectamos sus procesos de negocio con sistemas de atención rápidos y ágiles para soporte de usuarios."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Soluciones", link: "/servicios" },
+          { name: "Contact Center y CAUs" }
+        ]}
       />
 
       {/* Secciones del Servicio */}

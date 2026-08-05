@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
@@ -10,6 +11,14 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSolucionesOpen, setIsMobileSolucionesOpen] = useState(false);
   const [isMobileSectoresOpen, setIsMobileSectoresOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(path);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +40,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[250ms] ease-in-out w-full ${
         isScrolled
           ? "bg-white text-slate-900 shadow-md py-3 border-b border-slate-100"
           : "bg-transparent py-5 text-white"
@@ -42,16 +51,30 @@ export default function Navbar() {
         {/* Logo Corporativo */}
         <div className="flex flex-col items-start justify-center">
           <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-            <Image
-              src={isScrolled ? "/images/Logo-Finanservy.png" : "/images/Logo-Finanservy-Blanco.png"}
-              alt={isScrolled ? "Logo Finanservy Color" : "Logo Finanservy Blanco"}
-              width={240}
-              height={60}
-              className="h-10 lg:h-12 w-auto object-contain transition-all duration-300"
-              priority
-            />
+            <div className="relative h-10 lg:h-12 w-48 sm:w-56 flex items-center">
+              <Image
+                src="/images/Logo-Finanservy-Blanco.png"
+                alt="Logo Finanservy Blanco"
+                width={240}
+                height={60}
+                className={`h-10 lg:h-12 w-auto object-contain transition-opacity duration-[250ms] ease-in-out absolute left-0 ${
+                  isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+                }`}
+                priority
+              />
+              <Image
+                src="/images/Logo-Finanservy.png"
+                alt="Logo Finanservy Color"
+                width={240}
+                height={60}
+                className={`h-10 lg:h-12 w-auto object-contain transition-opacity duration-[250ms] ease-in-out absolute left-0 ${
+                  isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+                priority
+              />
+            </div>
           </Link>
-          <span className={`text-[9px] font-sans tracking-wide mt-0.5 leading-none transition-colors duration-300 font-medium ${
+          <span className={`text-[9px] font-sans tracking-wide mt-0.5 leading-none transition-colors duration-[250ms] font-medium ${
             isScrolled ? "text-slate-500" : "text-white/70"
           }`}>
             Especialistas en BPO Financiero | Grupo Cibernos
@@ -63,7 +86,9 @@ export default function Navbar() {
           <Link
             href="/"
             className={`font-semibold text-base lg:text-lg transition-colors ${
-              isScrolled
+              isActive("/")
+                ? "text-[#96C11F]"
+                : isScrolled
                 ? "text-slate-700 hover:text-blue-600"
                 : "text-white hover:text-blue-200"
             }`}
@@ -76,7 +101,9 @@ export default function Navbar() {
             <Link
               href="/servicios"
               className={`font-semibold text-base lg:text-lg transition-colors flex items-center gap-1 ${
-                isScrolled
+                isActive("/servicios")
+                  ? "text-[#96C11F]"
+                  : isScrolled
                   ? "text-slate-700 hover:text-blue-600"
                   : "text-white hover:text-blue-200"
               }`}
@@ -108,7 +135,9 @@ export default function Navbar() {
           <div className="relative group">
             <span
               className={`font-semibold text-base lg:text-lg transition-colors flex items-center gap-1 cursor-pointer ${
-                isScrolled
+                isActive("/sectores")
+                  ? "text-[#96C11F]"
+                  : isScrolled
                   ? "text-slate-700 hover:text-blue-600"
                   : "text-white hover:text-blue-200"
               }`}
@@ -136,7 +165,11 @@ export default function Navbar() {
           <Link
             href="/casos-exito"
             className={`font-semibold text-base lg:text-lg transition-colors ${
-              isScrolled ? "text-slate-700 hover:text-blue-600" : "text-white hover:text-blue-200"
+              isActive("/casos-exito")
+                ? "text-[#96C11F]"
+                : isScrolled
+                ? "text-slate-700 hover:text-blue-600"
+                : "text-white hover:text-blue-200"
             }`}
           >
             Casos de éxito
@@ -145,7 +178,11 @@ export default function Navbar() {
           <Link
             href="/nosotros"
             className={`font-semibold text-base lg:text-lg transition-colors ${
-              isScrolled ? "text-slate-700 hover:text-blue-600" : "text-white hover:text-blue-200"
+              isActive("/nosotros")
+                ? "text-[#96C11F]"
+                : isScrolled
+                ? "text-slate-700 hover:text-blue-600"
+                : "text-white hover:text-blue-200"
             }`}
           >
             Nosotros
@@ -154,7 +191,11 @@ export default function Navbar() {
           <Link
             href="/contacto"
             className={`font-semibold text-base lg:text-lg transition-colors ${
-              isScrolled ? "text-slate-700 hover:text-blue-600" : "text-white hover:text-blue-200"
+              isActive("/contacto")
+                ? "text-[#96C11F]"
+                : isScrolled
+                ? "text-slate-700 hover:text-blue-600"
+                : "text-white hover:text-blue-200"
             }`}
           >
             Contacto
@@ -165,7 +206,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/contacto"
-            className={`font-semibold px-7 py-3 rounded-full text-base transition-all shadow-sm ${
+            className={`font-semibold px-7 py-3 rounded-full text-base transition-all duration-[250ms] shadow-sm ${
               isScrolled
                 ? "bg-blue-600 text-white hover:bg-blue-700"
                 : "bg-white text-blue-900 hover:bg-slate-100"
@@ -198,7 +239,7 @@ export default function Navbar() {
 
       {/* Menú Móvil Desplegable */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 border-b shadow-lg transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute top-full left-0 right-0 border-b shadow-lg transition-all duration-[250ms] ease-in-out ${
           isMobileMenuOpen
             ? "opacity-100 translate-y-0 visible"
             : "opacity-0 -translate-y-4 invisible pointer-events-none"
@@ -213,7 +254,11 @@ export default function Navbar() {
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
             className={`font-medium text-base py-2 border-b border-dashed transition-colors ${
-              isScrolled ? "border-slate-100 hover:text-blue-600" : "border-slate-800 hover:text-blue-200"
+              isActive("/")
+                ? "text-[#96C11F] border-slate-100"
+                : isScrolled
+                ? "border-slate-100 hover:text-blue-600"
+                : "border-slate-800 hover:text-blue-200"
             }`}
           >
             Inicio
@@ -224,7 +269,11 @@ export default function Navbar() {
             <div
               onClick={() => setIsMobileSolucionesOpen(!isMobileSolucionesOpen)}
               className={`flex items-center justify-between font-medium text-base py-2 border-b border-dashed cursor-pointer transition-colors ${
-                isScrolled ? "border-slate-100 hover:text-blue-600" : "border-slate-800 hover:text-blue-200"
+                isActive("/servicios")
+                  ? "text-[#96C11F] border-slate-100"
+                  : isScrolled
+                  ? "border-slate-100 hover:text-blue-600"
+                  : "border-slate-800 hover:text-blue-200"
               }`}
             >
               <span>Soluciones</span>
@@ -258,7 +307,11 @@ export default function Navbar() {
             <div
               onClick={() => setIsMobileSectoresOpen(!isMobileSectoresOpen)}
               className={`flex items-center justify-between font-medium text-base py-2 border-b border-dashed cursor-pointer transition-colors ${
-                isScrolled ? "border-slate-100 hover:text-blue-600" : "border-slate-800 hover:text-blue-200"
+                isActive("/sectores")
+                  ? "text-[#96C11F] border-slate-100"
+                  : isScrolled
+                  ? "border-slate-100 hover:text-blue-600"
+                  : "border-slate-800 hover:text-blue-200"
               }`}
             >
               <span>Sectores</span>
@@ -284,7 +337,11 @@ export default function Navbar() {
             href="/casos-exito"
             onClick={() => setIsMobileMenuOpen(false)}
             className={`font-medium text-base py-2 border-b border-dashed transition-colors ${
-              isScrolled ? "border-slate-100 hover:text-blue-600" : "border-slate-800 hover:text-blue-200"
+              isActive("/casos-exito")
+                ? "text-[#96C11F] border-slate-100"
+                : isScrolled
+                ? "border-slate-100 hover:text-blue-600"
+                : "border-slate-800 hover:text-blue-200"
             }`}
           >
             Casos de éxito
@@ -294,7 +351,11 @@ export default function Navbar() {
             href="/nosotros"
             onClick={() => setIsMobileMenuOpen(false)}
             className={`font-medium text-base py-2 border-b border-dashed transition-colors ${
-              isScrolled ? "border-slate-100 hover:text-blue-600" : "border-slate-800 hover:text-blue-200"
+              isActive("/nosotros")
+                ? "text-[#96C11F] border-slate-100"
+                : isScrolled
+                ? "border-slate-100 hover:text-blue-600"
+                : "border-slate-800 hover:text-blue-200"
             }`}
           >
             Nosotros
@@ -304,7 +365,11 @@ export default function Navbar() {
             href="/contacto"
             onClick={() => setIsMobileMenuOpen(false)}
             className={`font-medium text-base py-2 border-b border-dashed transition-colors ${
-              isScrolled ? "border-slate-100 hover:text-blue-600" : "border-slate-800 hover:text-blue-200"
+              isActive("/contacto")
+                ? "text-[#96C11F] border-slate-100"
+                : isScrolled
+                ? "border-slate-100 hover:text-blue-600"
+                : "border-slate-800 hover:text-blue-200"
             }`}
           >
             Contacto

@@ -1,3 +1,5 @@
+import ServiceHero from "@/components/ServiceHero";
+
 export const metadata = {
   title: "Casos de Éxito en BPO | Finanservy Ecuador",
   description: "Conozca cómo optimizamos la eficiencia operativa del Banco Internacional de Ecuador y las principales entidades financieras globales.",
@@ -24,20 +26,17 @@ const globalCases = [
 
 export default function CasosExito() {
   return (
-    <div className="py-16 md:py-24 space-y-20 bg-slate-50">
+    <div className="space-y-20 bg-slate-50 pb-16 md:pb-24">
       {/* Cabecera */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm">
-          Credenciales y Casos Prácticos
-        </div>
-        <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
-          Nuestras Referencias de Éxito
-        </h1>
-        <div className="h-1.5 w-16 bg-accent mx-auto rounded-full" />
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">
-          Casos prácticos de optimización financiera y de procesos en la banca, seguros y real estate.
-        </p>
-      </section>
+      <ServiceHero
+        tagCategory="Credenciales y Casos Prácticos"
+        title="Nuestras Referencias de Éxito"
+        subtitle="Casos prácticos de optimización financiera y de procesos en la banca, seguros y real estate."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Casos de éxito" }
+        ]}
+      />
 
       {/* Caso Local Prominente */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

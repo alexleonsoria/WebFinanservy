@@ -15,6 +15,11 @@ export default function GestionProveedores() {
         tagConsole="SYS_COMPLIANCE_ACTIVE"
         title="Gestión de Proveedores y Compliance"
         subtitle="Mitigamos los riesgos legales, reputacionales y operativos derivados de la contratación de redes extensas de terceros."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Soluciones", link: "/servicios" },
+          { name: "Gestión de Proveedores" }
+        ]}
       />
 
       {/* Secciones de GessDATA */}

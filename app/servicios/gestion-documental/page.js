@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServiceHero from "@/components/ServiceHero";
 import {
   Keyboard,
   AlertTriangle,
@@ -230,78 +231,47 @@ export default function GestionDocumental() {
       `}} />
 
       {/* HERO SECTION */}
-      <section className="relative min-h-[85vh] flex items-center bg-slate-950 border-b border-slate-900 overflow-hidden py-16 md:py-24">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/gestiondocumentalhero.jpg"
-            alt="Gestión Documental Hero"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Overlay translúcido del 50% */}
-          <div className="absolute inset-0 bg-slate-950/60" />
+      <ServiceHero
+        backgroundImage="/images/gestiondocumentalhero.jpg"
+        tagCategory="TECNOLOGÍA APLICADA AL NEGOCIO"
+        title="Gestión Documental Inteligente"
+        subtitle="Transforme procesos documentales críticos en flujos digitales más rápidos, seguros y trazables mediante automatización inteligente."
+        breadcrumbs={[
+          { name: "Inicio", link: "/" },
+          { name: "Soluciones", link: "/servicios" },
+          { name: "Gestión Documental Inteligente" }
+        ]}
+      >
+        {/* Buttons */}
+        <div className="pt-4 flex flex-col sm:flex-row gap-4">
+          <Link
+            href="/contacto"
+            className="inline-block text-center px-8 py-4 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift shadow-lg shadow-[#96C11F]/10"
+          >
+            Solicitar demostración
+          </Link>
+          <a
+            href="#video-section"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 bg-white/5 hover:bg-white/10 text-white font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
+          >
+            <Play className="w-4 h-4 text-[#96C11F]" />
+            Ver video
+          </a>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-          
-          {/* Breadcrumb */}
-          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-300 font-mono mb-8 uppercase tracking-wider">
-            <Link href="/" className="hover:text-white transition-colors">
-              Inicio
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <Link href="/servicios" className="hover:text-white transition-colors">
-              Soluciones
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-[#96C11F] font-semibold">
-              Gestión Documental Inteligente
-            </span>
-          </div>
-
-          <div className="max-w-3xl space-y-6 text-left">
-            <div className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#96C11F] bg-[#074875]/95 px-3 py-1.5 rounded-sm border border-[#074875]/50">
-              TECNOLOGÍA APLICADA AL NEGOCIO
-            </div>
-            <h1 className="font-outfit font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
-              Gestión Documental Inteligente
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-light max-w-2xl">
-              Transforme procesos documentales críticos en flujos digitales más rápidos, seguros y trazables mediante automatización inteligente.
-            </p>
-            
-            {/* Buttons */}
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contacto"
-                className="inline-block text-center px-8 py-4 bg-[#96C11F] hover:bg-accent-hover text-slate-900 font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift shadow-lg shadow-[#96C11F]/10"
-              >
-                Solicitar demostración
-              </Link>
-              <a
-                href="#video-section"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 bg-white/5 hover:bg-white/10 text-white font-extrabold rounded-sm text-sm uppercase tracking-wider transition-all hover-lift"
-              >
-                <Play className="w-4 h-4 text-[#96C11F]" />
-                Ver video
-              </a>
-            </div>
-
-            {/* Badges */}
-            <div className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-slate-300 text-xs sm:text-sm font-light">
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#96C11F] font-bold">✓</span> Reduce tareas manuales
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#96C11F] font-bold">✓</span> Mayor trazabilidad
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#96C11F] font-bold">✓</span> Implementación consultiva
-              </span>
-            </div>
-          </div>
+        {/* Badges */}
+        <div className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-slate-300 text-xs sm:text-sm font-light">
+          <span className="flex items-center gap-1.5">
+            <span className="text-[#96C11F] font-bold">✓</span> Reduce tareas manuales
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="text-[#96C11F] font-bold">✓</span> Mayor trazabilidad
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="text-[#96C11F] font-bold">✓</span> Implementación consultiva
+          </span>
         </div>
-      </section>
+      </ServiceHero>
 
       {/* SECCIÓN 1: EL COSTO DE LA OPERACIÓN MANUAL */}
       <section className="py-20 bg-white border-b border-slate-200/60">
