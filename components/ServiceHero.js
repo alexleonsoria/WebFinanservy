@@ -9,6 +9,7 @@ export default function ServiceHero({
   title,
   subtitle,
   breadcrumbs = [],
+  className = "pt-28 pb-16 md:pt-36 md:pb-24",
   children
 }) {
   const hasImage = !!backgroundImage;
@@ -43,7 +44,7 @@ export default function ServiceHero({
       )}
 
       {/* Hero content wrapper with top padding to prevent header collision */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 pt-28 pb-16 md:pt-36 md:pb-24">
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 ${className}`}>
         <div className="max-w-3xl space-y-5">
           
           {/* Dynamic Breadcrumbs */}

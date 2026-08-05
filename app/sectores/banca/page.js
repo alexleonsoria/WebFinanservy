@@ -149,7 +149,7 @@ export default function BancaSectorPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 pt-20 md:pt-24">
+    <div className="flex flex-col min-h-screen bg-slate-50">
       
       {/* Dynamic reveal animations styling */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -174,6 +174,7 @@ export default function BancaSectorPage() {
         tagCategory="SECTOR FINANCIERO"
         title="Soluciones especializadas para banca"
         subtitle="Ayudamos a bancos y entidades financieras a optimizar procesos críticos, mejorar la eficiencia operativa y fortalecer la trazabilidad mediante BPO especializado y automatización inteligente."
+        className="pt-[130px] pb-16 md:pt-[150px] md:pb-24"
         breadcrumbs={[
           { name: "Inicio", link: "/" },
           { name: "Sectores" },
